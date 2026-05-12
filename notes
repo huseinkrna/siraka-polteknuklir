@@ -1,0 +1,49 @@
+1. buat animasi biar animatif
+2. buat PWA dinamis untuk PC, Tab, sama Hp + ganti favicon + icon v
+3. masukin simulatornya
+3a. buat UI/UX untuk simulatornya
+3b. masukin backend perhitungannnya. grafik merupakah hubungan perubahan daya vs posisi batang kendali dengan sumbu y adalah daya relatif, sumbu x adalah waktu (s). serta kasih legenda yang diperlukan user pada grafiknya. pada POV Grafik Full informasi yang ditampilkan lebih detail. 
+3c. masukin tampilan 3d reaktornya di 2 POV : 1- tampilan 360 secara tampilan 3/4; 2- tampilan core reaktor
+4. Tolong konten deskripsi pada setiap timeline dibuat rata kanan kiri dengan posisi tetap seperti saat ini, untuk gari time line bisa lebih di ke ataskan sehingga ketika akan memencet titik timeline tidak perlu menscroll halaman ke bawah
+5. Webnya dibuat klik panah kanan kiri dengan ada tahunnya yang muncul ketika di klik kanan atau kiri
+6. 3d pake 3js
+7. komen gambar layering, bottom : 9% adalah kondisi 0% ketinggian ketiga batang kendali. left masing masing batang kendali :
+safe : left : 13.5%
+shim : left : 18.4%
+rod : left : 23.3% 
+ukuran batang kendalinya yang warna merah dibuat 1 ukuran saja dengan rounded atas dan bawah patokannya dengan bottom : 9% dan height : 22%
+jadi batang kendali warna merah tersebut akan naik turun jika dikendalikan (persegi roundednya naik, bukan memanjang ke atas) dengan patokan bottom : 9% dan height : 22% adalah kondisi 0% kenaikan batang kendali dan kondisi 100% kenaikan batang kendali adalah (untuk dimensi panjang lebar dibuat tetap dan seragam) bottom : 28%
+tambahkan background hitam/dark mode
+8. simulator 
+V a. kasih kotak tombol POV 1 (yaitu tampilan saat ini), POV 2 (dialihkan ke halaman lain, menyusul), POV 3 (dialihkan ke halaman lain, mendatang), dan Grafik (berisi grafik) pada poin d yang diperbesar/perlebar ukurannya sehingga user dapat melihat jelas legendanya
+b. backend matematis (menyusul) untuk grafik, perhitungan sesiuai dengan data reaktor aslinya. 
+V c. digerakkan dengan batang kendali yang warna merah tersebut (safe, shim, regulate rod) ke atas dan ke bawah menggunakan keyboard sebagi berikut : 
+safe rod dapat digerakkan naik dan turun menggunakan keyboard huruf space + Q = naik, space + A = turun 
+shim rod dapat digerakkan naik dan turun menggunakan keyboard huruf space + W = naik, space + S = turun 
+regulate rod dapat digerakkan naik dan turun menggunakan keyboard huruf space + E = naik, space + D = turun 
+jadi user harus menekan tombol space dan huruf tersebut untuk dapat menaikkan batang kendali, tanpa menekan space maka tidak bisa (akan muncul pop up user harus menekan space + huruf untuk dapat menaikkan/menurunkan batang kendali)
+V d. tambahkan grafik chart di sebelah kanan (konten utama yang gambar naik turun batang kendali), grafiknya berupa hubungan Perubahan Daya vs Posisi Batang (y = daya relatif terhadap x = waktu (s)) dengan perhitungan matematis pada backend (menyusul) buat dulu tempat/layout untuk grafiknya
+V e. tambahkan tombol seperti kembali ke beranda
+V f. isi persentase kenaikan batang kendali pada gambar tersebut pada tempat persentasenya, sesuaikan dengan kenaikan batang kendali realtime buat dengan range 00.1% per kenaikan atau penurunannya
+V g. gw mengaharapkan ketika user geser/klik kursor ke elemen/bagian alat reaktor maka akan muncul pop up mengenai informasi alat tersebut.
+9. tombol trimp-shutdown
+10. tanda keterangan reaktor bagian reaktor
+11. informasi hotspot dibeberapa bagian gambar pada simulator beserta informasinya
+
+notes
+
+1. tutorialnya diberikan secara rinci seperti naikkan batang kendali apa (safe, shim, reg) berapa persen gitu lalu nanti bakal terjadi apa
+
+2. sound allert akan otomatis berbunyi jika kondisi trip
+
+3. ketika trip pop up akan muncul berkedip kedip, berikan tombol x kecil di kanan atas pop up untuk menutup pop up supaya tidak menutupi konten utama
+
+4. revisi untuk batasan kapan alarm berbunyi dan mati adalah ketika semua batang kendali sudah di posisi 0% semua yang otomatis oleh sistem shutdown. saat posisi dari trip ke shutdown, animasikan juga batang kendalinya turun ke bawah dari kondisi semula. jadi tidak langsung lompat dari kondisi semula langsung ke 0% tapi dari kondisi semula menurun bertahap sesuai dengan kecepatan batang kendali sampai di 0%
+
+5. efek blinking tetap ada di TRIP
+
+6. kasih tahu user sebab akibat dari batang kendali, kasih tahu user juga kalo kenapa grafik yang nanti akan dihasilkan belum naik dan masih datar karena kondisi sangat sub kritis (apakah akan dicantumkan di sini bagian utama simulator atau di bagian grafik yang detail nanti ?)
+
+7. untuk spotlight tentang bejana reaktor dan sistem pendingin letaknya terlalu tidak pas, dimana gw bisa ganti sesuaikan dulu persentasenya baru yg fiks gw masukin ke kodenya
+8. biarkan user sampai di posisi scram dan biarkan scram selama 1-2 detik baru shutdown. jaid user merasakan kondisi scram
+9. dibagian kolom kanan yaitu camera pov, kontrol batang kendali, status reaktor, dan daya aktual reaktor dibuat fiks dimensi saja yaitu seukuran layar laptop jadi user tidak perlu scroll 
