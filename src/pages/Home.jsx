@@ -5,12 +5,14 @@ import { useEffect } from 'react';
 
 const Home = () => {
   const navigate = useNavigate();
+  // Kita tetap ambil lang dari context, tapi kita abaikan dan paksa ke 'ID'
   const { lang, setLang } = useLanguage();
 
   useEffect(() => {
     document.documentElement.classList.add('dark');
   }, []);
 
+  // Data teks hanya bahasa Indonesia (ID) karena switch dimatikan
   const content = {
     ID: {
       welcome: "Halo, Selamat Datang!",
@@ -28,7 +30,8 @@ const Home = () => {
     }
   };
 
-  const activeLang = (lang === 'ID' || lang === 'EN') ? lang : 'ID';
+  // Paksa bahasa ke 'ID' (abaikan nilai dari context)
+  const activeLang = 'ID';
   const text = content[activeLang];
 
   return (
@@ -40,21 +43,9 @@ const Home = () => {
         backgroundPosition: 'center'
       }}
     >
-      {/* Tombol Toggle Bahasa */}
-      <div className="absolute top-8 right-8 z-50 flex items-center gap-3">
-        <span className={`text-sm font-bold ${activeLang === 'ID' ? 'text-white' : 'text-gray-500'}`}>Ind</span>
-        <div 
-          onClick={() => setLang(activeLang === 'ID' ? 'EN' : 'ID')}
-          className="relative w-14 h-7 bg-gray-600/50 backdrop-blur-md rounded-full cursor-pointer p-1 transition-all"
-        >
-          <div 
-            className={`absolute w-5 h-5 bg-white rounded-full shadow-lg transition-all duration-300 transform ${
-              activeLang === 'EN' ? 'translate-x-7' : 'translate-x-0'
-            }`}
-          />
-        </div>
-        <span className={`text-sm font-bold ${activeLang === 'EN' ? 'text-white' : 'text-gray-500'}`}>Ing</span>
-      </div>
+      {/* ============================================================
+          SWITCH BAHASA DIHAPUS (tidak ada lagi tombol Ind/Ing)
+          ============================================================ */}
 
       {/* Konten Utama */}
       <div className="z-10 text-center text-white px-4">
@@ -70,10 +61,10 @@ const Home = () => {
           {text.subtitle}
         </p>
         
-        {/* === TOMBOL DENGAN URUTAN BARU === */}
+        {/* TOMBOL */}
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
           
-          {/* 1. Ikuti Tur (tombol biasa) */}
+          {/* 1. Ikuti Tur */}
           <button 
             onClick={() => navigate('/tour')}
             className="w-44 border-2 border-white text-white px-6 py-2.5 font-semibold hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm text-sm"
@@ -81,7 +72,7 @@ const Home = () => {
             {text.btnTour}
           </button>
           
-          {/* 2. Simulasi (tombol utama, lebih besar & menonjol) */}
+          {/* 2. Simulasi (tombol utama) */}
           <button 
             onClick={() => navigate('/simulator')}
             className="w-56 md:w-64 bg-white text-black px-8 py-4 font-bold text-lg rounded-lg shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] hover:scale-105 transition-all duration-300"
@@ -89,7 +80,7 @@ const Home = () => {
             {text.btnSim}
           </button>
           
-          {/* 3. Galeri (tombol biasa) */}
+          {/* 3. Galeri */}
           <button 
             onClick={() => navigate('/gallery')}
             className="w-44 border-2 border-purple-400 text-purple-300 px-6 py-2.5 font-semibold hover:bg-purple-400 hover:text-black transition-all duration-300 backdrop-blur-sm text-sm"

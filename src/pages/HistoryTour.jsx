@@ -10,6 +10,13 @@ export default function HistoryTour() {
     // Ganti bg dan text
     <main className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
       
+      <button
+        onClick={() => navigate('/')}
+        className="fixed top-4 right-4 z-50 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition shadow-lg flex items-center gap-2"
+      >
+        Kembali
+      </button>
+
       {/* Hero Section */}
       <header className="relative h-[65vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0" aria-hidden="true">
@@ -51,7 +58,7 @@ export default function HistoryTour() {
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight">
-            Sejarah Telah Ditulis. <br className="hidden md:block"/> Sekarang Giliranmu.
+            Sejarah Telah Ditulis <br className="hidden md:block"/> Sekarang Giliranmu
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
