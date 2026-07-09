@@ -69,6 +69,7 @@ export default function Simulator() {
     alarmAudio.current.loop = true;
   }, []);
 
+  // 🔥 PERBAIKAN: Hapus dependency showAlert, setShowAlert langsung berdasarkan isTripUI
   useEffect(() => {
     if (isTripUI) {
       setShowAlert(true);
@@ -80,7 +81,7 @@ export default function Simulator() {
         alarmAudio.current.currentTime = 0;
       }
     }
-  }, [isTripUI]);
+  }, [isTripUI]); // Hanya bergantung pada isTripUI
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -178,6 +179,9 @@ export default function Simulator() {
     };
   }, [tutorialStep, stepSimulation]);
 
+  // Fungsi calculatePosition TIDAK dipakai untuk rod, tapi masih dipakai untuk yang lain? 
+  // Kita tetap pertahankan untuk kemungkinan penggunaan lain.
+  const calculatePosition = (v) => 9 + (v / 100) * 19;
   const statusReaktor = isTripUI ? 'SCRAM' : (simData.dayaWatt > 1.5 ? 'CRITICAL' : 'SHUTDOWN');
 
   return (
@@ -256,7 +260,7 @@ export default function Simulator() {
 
           {activePOV === 'main' && (
             <div className="relative w-full max-w-4xl">
-              {/* Background SVG Reaktor */}
+              {/* 🔥 Menggunakan SVG sebagai background */}
               <img 
                 src="/assets/images/reaktor-bg.svg" 
                 alt="Reaktor 2D" 
@@ -298,9 +302,10 @@ export default function Simulator() {
               />
 
               {/* ============================================================
-                  🎯 LABEL PERSENTASE BATANG KENDALI
+                  🎯 LABEL PERSENTASE - SESUAIKAN SENDIRI PAKAI TUNING
                   ============================================================ */}
               
+              {/* Safe Rod Label */}
               <div 
                 className="absolute text-[0.6rem] font-mono font-bold text-cyan-300 z-20 transform -translate-x-1/2" 
                 style={{ 
@@ -311,6 +316,7 @@ export default function Simulator() {
                 {rods.safe.toFixed(1)}%
               </div>
 
+              {/* Shim Rod Label */}
               <div 
                 className="absolute text-[0.6rem] font-mono font-bold text-cyan-300 z-20 transform -translate-x-1/2" 
                 style={{ 
@@ -321,6 +327,7 @@ export default function Simulator() {
                 {rods.shim.toFixed(1)}%
               </div>
 
+              {/* Reg Rod Label */}
               <div 
                 className="absolute text-[0.6rem] font-mono font-bold text-cyan-300 z-20 transform -translate-x-1/2" 
                 style={{ 
@@ -331,105 +338,38 @@ export default function Simulator() {
                 {rods.regulate.toFixed(1)}%
               </div>
 
-              {/* ============================================================
-                  🎯 HOTSPOT INTERAKTIF (8 TITIK)
-                  ============================================================ */}
+              {/* HOTSPOT */}
+              <div className="absolute top-[73%] left-[18%] group z-30">
+                <span className="bg-gray-800 text-[0.5rem] px-1.5 py-0.5 rounded-full border border-gray-600 cursor-help font-bold text-blue-300">?</span>
+                <div className="hidden group-hover:block absolute bottom-full left-0 w-48 bg-gray-900 border border-blue-500 p-2 rounded shadow-xl text-left mb-1 z-50">
+                  <h3 className="text-blue-400 font-bold text-[0.65rem] mb-1">Teras Reaktor</h3>
+                  <p className="text-[0.55rem] text-gray-300">Lokasi bahan bakar (Uranium). Tempat terjadinya reaksi fisi berantai dalam kolam air demineralisasi.</p>
+                </div>
+              </div>
 
-              {/* 1. ROD DRIVE MECHANISM */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '18.3%', top: '27%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-yellow-400 cursor-help font-bold text-yellow-300 hover:bg-yellow-400/20 transition">⛰️</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-yellow-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-yellow-400 font-bold text-[0.7rem] mb-1">Rod Drive Mechanism</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Motor stepper &amp; magnetic clutch yang menggerakkan batang kendali. Pada kondisi SCRAM, arus listrik diputus sehingga batang jatuh bebas ke dalam teras dalam waktu &lt; 0.6 detik.</p>
-  </div>
-</div>
+              <div className="absolute top-[10%] left-[18%] group z-30">
+                <span className="bg-gray-800 text-[0.5rem] px-1.5 py-0.5 rounded-full border border-gray-600 cursor-help font-bold text-yellow-300">?</span>
+                <div className="hidden group-hover:block absolute top-full left-0 mt-1 w-48 bg-gray-900 border border-yellow-500 p-2 rounded shadow-xl text-left z-50">
+                  <h3 className="text-yellow-400 font-bold text-[0.65rem] mb-1">Rod Drive Mechanism</h3>
+                  <p className="text-[0.55rem] text-gray-300">Motor stepper penarik batang. Dilengkapi magnetic clutch pelepas batang otomatis jika arus diputus (SCRAM).</p>
+                </div>
+              </div>
 
-{/* 2A. SAFE ROD */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '13%', top: '14%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-red-400 cursor-help font-bold text-red-300 hover:bg-red-400/20 transition">🛡️</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-red-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-red-400 font-bold text-[0.7rem] mb-1">Safe Rod (SCRAM)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Batang pengaman (Safety Rod) dengan material penyerap neutron B₄C. Berfungsi sebagai sistem shutdown utama. Jika daya &gt; 110 kW, batang ini otomatis dijatuhkan (SCRAM) dalam 1.5 detik.</p>
-  </div>
-</div>
+              <div className="absolute top-[48%] left-[38%] group z-30">
+                <span className="bg-gray-800 text-[0.5rem] px-1.5 py-0.5 rounded-full border border-gray-600 cursor-help font-bold text-orange-300">?</span>
+                <div className="hidden group-hover:block absolute bottom-full left-0 w-48 bg-gray-900 border border-orange-500 p-2 rounded shadow-xl text-left mb-1 z-50">
+                  <h3 className="text-orange-400 font-bold text-[0.65rem] mb-1">Pipa Pendingin Primer</h3>
+                  <p className="text-[0.55rem] text-gray-300">Sirkuit yang membawa panas sisa fisi menuju Heat Exchanger agar tidak terjadi pelelehan teras.</p>
+                </div>
+              </div>
 
-{/* 2B. SHIM ROD */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '18.3%', top: '14%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-yellow-400 cursor-help font-bold text-yellow-300 hover:bg-yellow-400/20 transition">⚙️</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-yellow-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-yellow-400 font-bold text-[0.7rem] mb-1">Shim Rod (Kompensasi)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Batang kompensasi digunakan untuk mengkompensasi perubahan reaktivitas akibat burn-up bahan bakar dan efek temperatur selama operasi jangka panjang.</p>
-  </div>
-</div>
-
-{/* 2C. REGULATING ROD */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '24%', top: '14%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-cyan-400 cursor-help font-bold text-cyan-300 hover:bg-cyan-400/20 transition">🎯</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-cyan-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-cyan-400 font-bold text-[0.7rem] mb-1">Regulating Rod (Pengatur)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Batang pengatur untuk kontrol daya secara halus. Digerakkan oleh motor stepper dengan kecepatan 0.63 cm/detik untuk mencapai daya operasi nominal 100 kW secara presisi.</p>
-  </div>
-</div>
-
-{/* 3. JEMBATAN REAKTOR */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '32.3%', top: '29%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-blue-400 cursor-help font-bold text-blue-300 hover:bg-blue-400/20 transition">🌉</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-blue-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-blue-400 font-bold text-[0.7rem] mb-1">Jembatan Reaktor (Bridge)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Struktur besi di atas kolam reaktor (panjang 251 cm, lebar 55 cm). Berfungsi sebagai platform untuk motor penggerak batang kendali, sensor suhu, dan akses loading/unloading bahan bakar.</p>
-  </div>
-</div>
-
-{/* 4. PERISAI RADIASI */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '6.7%', top: '38%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-purple-400 cursor-help font-bold text-purple-300 hover:bg-purple-400/20 transition">🧱</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-purple-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-purple-400 font-bold text-[0.7rem] mb-1">Perisai Radiasi (Biological Shielding)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Beton barit dengan rapat massa 3,3 ton/m³, tinggi 6,5 m, tebal 2,5 m. Berfungsi menahan radiasi neutron &amp; gamma dari teras. Telah di-retrofit untuk menahan gempa zona 5 (0.25–0.3g).</p>
-  </div>
-</div>
-
-{/* 5. KOLAM REAKTOR + AIR MODERATOR */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '27%', top: '48.8%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-sky-400 cursor-help font-bold text-sky-300 hover:bg-sky-400/20 transition">💧</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-sky-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-sky-400 font-bold text-[0.7rem] mb-1">Kolam Reaktor &amp; Air Moderator</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Tangki aluminium diameter 198 cm, tinggi 655 cm, berisi air demineralisasi. Berfungsi sebagai moderator neutron, pendingin konveksi alam, dan perisai radiasi vertikal. Ketinggian air ~4,9 m di atas teras.</p>
-  </div>
-</div>
-
-{/* 6. TERAS REAKTOR */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '18.4%', top: '82.8%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-orange-400 cursor-help font-bold text-orange-300 hover:bg-orange-400/20 transition">☢️</span>
-  <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-gray-900 border border-orange-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-orange-400 font-bold text-[0.7rem] mb-1">Teras Reaktor (Core)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">
-      <strong>Isi:</strong> 71 elemen bakar (69 tipe 104, 2 tipe 204), 14 dummy grafit, 
-      3 batang kendali, dan 1 sumber neutron Am-Be. <br/>
-      <strong>Dimensi:</strong> Silinder radius 225 mm, tinggi 580 mm. <br/>
-      <strong>Bahan bakar:</strong> U-ZrH₁.₇ dengan 8.5% U-235 (pengayaan 20%). <br/>
-      <strong>Fluks neutron:</strong> 1.9 × 10¹² n/cm²·s (maks. termal).
-    </p>
-  </div>
-</div>
-
-{/* 7. PIPA PENDINGIN */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '48.6%', top: '39.1%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-amber-400 cursor-help font-bold text-amber-300 hover:bg-amber-400/20 transition">🔁</span>
-  <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 bg-gray-900 border border-amber-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-amber-400 font-bold text-[0.7rem] mb-1">Pipa Pendingin Primer</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Sirkuit pendingin primer berbahan aluminium yang mengalirkan air dari kolam reaktor ke Heat Exchanger. Aliran konveksi alam (0.56 cm/s) sudah cukup untuk daya 100 kW. Dilengkapi lubang antisiphon untuk mencegah kebocoran tak terkendali.</p>
-  </div>
-</div>
-
-{/* 8. POMPA SIRKULASI */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '60.1%', top: '39.8%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-emerald-400 cursor-help font-bold text-emerald-300 hover:bg-emerald-400/20 transition">🔄</span>
-  <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 bg-gray-900 border border-emerald-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-emerald-400 font-bold text-[0.7rem] mb-1">Pompa Sirkulasi</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Pompa sirkulasi yang mendorong air pendingin sekunder melalui Heat Exchanger (HE Tube). Pada mode konveksi alam (kalibrasi daya), pompa dimatikan dan pendinginan mengandalkan sirkulasi termal alami. Kapasitas pompa disesuaikan dengan laju pembuangan panas 100 kW.</p>
-  </div>
-</div>
+              <div className="absolute top-[48%] left-[72%] group z-30">
+                <span className="bg-gray-800 text-[0.5rem] px-1.5 py-0.5 rounded-full border border-gray-600 cursor-help font-bold text-cyan-300">?</span>
+                <div className="hidden group-hover:block absolute bottom-full right-0 w-48 bg-gray-900 border border-cyan-500 p-2 rounded shadow-xl text-left mb-1 z-50">
+                  <h3 className="text-cyan-400 font-bold text-[0.65rem] mb-1">Pompa Sirkulasi</h3>
+                  <p className="text-[0.55rem] text-gray-300">Menjamin aliran sirkulasi air konstan selama reaktor beroperasi pada daya tinggi.</p>
+                </div>
+              </div>
 
             </div>
           )}
@@ -465,7 +405,7 @@ export default function Simulator() {
                   <ul className="text-[0.55rem] text-gray-400 list-disc list-inside">
                     <li><strong className="text-red-400">Safe:</strong> Batang SCRAM.</li>
                     <li><strong className="text-yellow-400">Shim:</strong> Kompensator reaktivitas.</li>
-                    <li><strong className="text-cyan-400">Reg:</strong> Pengatur halus daya.</li>
+                    <li><strong className="text-green-400">Reg:</strong> Pengatur halus daya.</li>
                   </ul>
                 </div>
               </div>

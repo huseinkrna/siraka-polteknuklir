@@ -8,8 +8,16 @@ export default function Gallery() {
   const navigate = useNavigate();
   const { lang } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(true); // untuk transisi
+  const [fade, setFade] = useState(true);
   const totalItems = galleryItems.length;
+
+  // 🔥 TAMBAHKAN INI UNTUK DARK MODE
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+    return () => {
+      document.documentElement.classList.remove('dark');
+    };
+  }, []);
 
   // Efek fade saat index berubah
   useEffect(() => {

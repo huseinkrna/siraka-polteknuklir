@@ -1,11 +1,19 @@
 // src/pages/HistoryTour.jsx
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react'; // 👈 tambahan
 import TimelineCard from '../components/history/TimelineCard';
 import { historyData } from '../data/historyData';
 
 export default function HistoryTour() {
   const navigate = useNavigate();
 
+  // 🔥 TAMBAHKAN INI UNTUK DARK MODE
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+    return () => {
+      document.documentElement.classList.remove('dark');
+    };
+  }, []);
   return (
     // Ganti bg dan text
     <main className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
