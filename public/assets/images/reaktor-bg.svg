@@ -4,13 +4,22 @@
   0% {
     transform: translate(124.5px, 95.5px) scaleX(1) scaleY(1) translate(-124.5px, -95.5px);
   }
-  26.53% {
+  24.25% {
     transform: translate(124.5px, 95.5px) scaleX(1) scaleY(1) translate(-124.5px, -95.5px);
   }
-  46.73% {
-    transform: translate(124.5px, 95.5px) scaleX(1.1) scaleY(1.1) translate(-124.5px, -95.5px);
+  40.98% {
+    transform: translate(124.5px, 95.5px) scaleX(1) scaleY(1) translate(-124.5px, -95.5px);
   }
-  66.93% {
+  46.31% {
+    transform: translate(124.5px, 95.5px) scaleX(1.088) scaleY(1.088) translate(-124.5px, -95.5px);
+  }
+  55.67% {
+    transform: translate(124.5px, 95.5px) scaleX(1.025) scaleY(1.025) translate(-124.5px, -95.5px);
+  }
+  61.01% {
+    transform: translate(124.5px, 95.5px) scaleX(1) scaleY(1) translate(-124.5px, -95.5px);
+  }
+  85.26% {
     transform: translate(124.5px, 95.5px) scaleX(1) scaleY(1) translate(-124.5px, -95.5px);
   }
   100% {
@@ -19,7 +28,7 @@
 }
 #Kompres_1 {
   transform-origin: 0 0;
-  animation: kf_Kompres_1_transform_0 1.5s linear infinite;
+  animation: kf_Kompres_1_transform_0 2.062s linear infinite;
 }
 @keyframes kf_Vector_15_path-trim_0 {
   0% {
@@ -27,13 +36,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  32.733% {
+  36.372% {
     animation-timing-function: ease-out;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  39.4% {
+  38.797% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -45,7 +54,7 @@
   }
 }
 #Vector_15 {
-  animation: kf_Vector_15_path-trim_0 1.5s linear infinite;
+  animation: kf_Vector_15_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Vector_16_path-trim_0 {
   0% {
@@ -53,13 +62,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  26.067% {
+  33.948% {
     animation-timing-function: ease-out;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  32.733% {
+  36.372% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -71,22 +80,25 @@
   }
 }
 #Vector_16 {
-  animation: kf_Vector_16_path-trim_0 1.5s linear infinite;
+  animation: kf_Vector_16_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Kompres_2_transform_0 {
   0% {
     transform: translateY(331px) translate(124.5px, 95.5px) scaleX(1) scaleY(1) translate(-124.5px, -95.5px);
   }
-  26.53% {
+  24.25% {
     transform: translateY(331px) translate(124.5px, 95.5px) scaleX(1) scaleY(1) translate(-124.5px, -95.5px);
   }
-  46.53% {
+  40.98% {
+    transform: translateY(331px) translate(124.5px, 95.5px) scaleX(1) scaleY(1) translate(-124.5px, -95.5px);
+  }
+  50.99% {
     transform: translateY(331px) translate(124.5px, 95.5px) scaleX(1.1) scaleY(1.1) translate(-124.5px, -95.5px);
   }
-  66.53% {
+  61.01% {
     transform: translateY(331px) translate(124.5px, 95.5px) scaleX(1) scaleY(1) translate(-124.5px, -95.5px);
   }
-  99.87% {
+  85.26% {
     transform: translateY(331px) translate(124.5px, 95.5px) scaleX(1) scaleY(1) translate(-124.5px, -95.5px);
   }
   100% {
@@ -95,7 +107,7 @@
 }
 #Kompres_2 {
   transform-origin: 0 0;
-  animation: kf_Kompres_2_transform_0 1.5s linear infinite;
+  animation: kf_Kompres_2_transform_0 2.062s linear infinite;
 }
 @keyframes kf_Vector_34_path-trim_0 {
   0% {
@@ -103,13 +115,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  32.733% {
+  36.372% {
     animation-timing-function: ease-out;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  39.4% {
+  38.797% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -121,7 +133,7 @@
   }
 }
 #Vector_34 {
-  animation: kf_Vector_34_path-trim_0 1.5s linear infinite;
+  animation: kf_Vector_34_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Vector_35_path-trim_0 {
   0% {
@@ -129,13 +141,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  26.133% {
+  33.948% {
     animation-timing-function: ease-out;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  32.733% {
+  36.372% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -147,22 +159,25 @@
   }
 }
 #Vector_35 {
-  animation: kf_Vector_35_path-trim_0 1.5s linear infinite;
+  animation: kf_Vector_35_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Motor_1_transform_0 {
   0% {
     transform: translateX(336px) translateY(2px) translate(85px, 61px) scaleX(1) scaleY(1) translate(-85px, -61px);
   }
-  33.33% {
+  24.25% {
     transform: translateX(336px) translateY(2px) translate(85px, 61px) scaleX(1) scaleY(1) translate(-85px, -61px);
   }
-  38.8% {
+  48.5% {
     transform: translateX(336px) translateY(2px) translate(85px, 61px) scaleX(1) scaleY(1) translate(-85px, -61px);
   }
-  58.8% {
-    transform: translateX(336px) translateY(2px) translate(85px, 61px) scaleX(1.1) scaleY(1.1) translate(-85px, -61px);
+  61.88% {
+    transform: translateX(336px) translateY(2px) translate(85px, 61px) scaleX(1.2) scaleY(1.2) translate(-85px, -61px);
   }
-  78.8% {
+  63.05% {
+    transform: translateX(336px) translateY(2px) translate(85px, 61px) scaleX(1.198) scaleY(1.198) translate(-85px, -61px);
+  }
+  76.43% {
     transform: translateX(336px) translateY(2px) translate(85px, 61px) scaleX(1) scaleY(1) translate(-85px, -61px);
   }
   100% {
@@ -171,12 +186,18 @@
 }
 #Motor_1 {
   transform-origin: 0 0;
-  animation: kf_Motor_1_transform_0 1.5s linear infinite;
+  animation: kf_Motor_1_transform_0 2.062s linear infinite;
 }
 @keyframes kf_M_Pompa_1_transform_0 {
   0% {
+    transform: translateX(72px) translateY(69px) translate(13px, 13px) rotate(0rad) translate(-13px, -13px);
+  }
+  24.25% {
     animation-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
     transform: translateX(72px) translateY(69px) translate(13px, 13px) rotate(0rad) translate(-13px, -13px);
+  }
+  96.99% {
+    transform: translateX(72px) translateY(69px) translate(13px, 13px) rotate(6.283rad) translate(-13px, -13px);
   }
   100% {
     transform: translateX(72px) translateY(69px) translate(13px, 13px) rotate(6.283rad) translate(-13px, -13px);
@@ -184,22 +205,25 @@
 }
 #M_Pompa_1 {
   transform-origin: 0 0;
-  animation: kf_M_Pompa_1_transform_0 1.5s linear infinite;
+  animation: kf_M_Pompa_1_transform_0 2.062s linear infinite;
 }
 @keyframes kf_Motor_2_transform_0 {
   0% {
     transform: translateX(336px) translateY(333px) translate(85px, 61px) scaleX(1) scaleY(1) translate(-85px, -61px);
   }
-  33.33% {
+  24.25% {
     transform: translateX(336px) translateY(333px) translate(85px, 61px) scaleX(1) scaleY(1) translate(-85px, -61px);
   }
-  38.8% {
+  48.5% {
     transform: translateX(336px) translateY(333px) translate(85px, 61px) scaleX(1) scaleY(1) translate(-85px, -61px);
   }
-  58.8% {
-    transform: translateX(336px) translateY(333px) translate(85px, 61px) scaleX(1.1) scaleY(1.1) translate(-85px, -61px);
+  61.88% {
+    transform: translateX(336px) translateY(333px) translate(85px, 61px) scaleX(1.2) scaleY(1.2) translate(-85px, -61px);
   }
-  78.8% {
+  63.05% {
+    transform: translateX(336px) translateY(333px) translate(85px, 61px) scaleX(1.198) scaleY(1.198) translate(-85px, -61px);
+  }
+  76.43% {
     transform: translateX(336px) translateY(333px) translate(85px, 61px) scaleX(1) scaleY(1) translate(-85px, -61px);
   }
   100% {
@@ -208,12 +232,18 @@
 }
 #Motor_2 {
   transform-origin: 0 0;
-  animation: kf_Motor_2_transform_0 1.5s linear infinite;
+  animation: kf_Motor_2_transform_0 2.062s linear infinite;
 }
 @keyframes kf_M_Pompa_2_transform_0 {
   0% {
+    transform: translateX(72px) translateY(69px) translate(13px, 13px) rotate(-6.283rad) translate(-13px, -13px);
+  }
+  24.25% {
     animation-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
     transform: translateX(72px) translateY(69px) translate(13px, 13px) rotate(-6.283rad) translate(-13px, -13px);
+  }
+  96.99% {
+    transform: translateX(72px) translateY(69px) translate(13px, 13px) rotate(0rad) translate(-13px, -13px);
   }
   100% {
     transform: translateX(72px) translateY(69px) translate(13px, 13px) rotate(0rad) translate(-13px, -13px);
@@ -221,7 +251,7 @@
 }
 #M_Pompa_2 {
   transform-origin: 0 0;
-  animation: kf_M_Pompa_2_transform_0 1.5s linear infinite;
+  animation: kf_M_Pompa_2_transform_0 2.062s linear infinite;
 }
 @keyframes kf_After_1Kompresor_Merah_path-trim_0 {
   0% {
@@ -229,13 +259,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  55.667% {
+  61.3% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  57.933% {
+  64.5% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -247,7 +277,7 @@
   }
 }
 #After_1Kompresor_Merah {
-  animation: kf_After_1Kompresor_Merah_path-trim_0 1.5s linear infinite;
+  animation: kf_After_1Kompresor_Merah_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_L_Merah_2_path-trim_0 {
   0% {
@@ -255,13 +285,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  57.933% {
+  64.5% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  60.133% {
+  67.701% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -273,7 +303,7 @@
   }
 }
 #L_Merah_2 {
-  animation: kf_L_Merah_2_path-trim_0 1.5s linear infinite;
+  animation: kf_L_Merah_2_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_After_L_Merah_2_path-trim_0 {
   0% {
@@ -281,13 +311,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  59.933% {
+  67.701% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  62.133% {
+  70.902% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -299,7 +329,7 @@
   }
 }
 #After_L_Merah_2 {
-  animation: kf_After_L_Merah_2_path-trim_0 1.5s linear infinite;
+  animation: kf_After_L_Merah_2_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Before_T_Merah_path-trim_0 {
   0% {
@@ -307,13 +337,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  62.333% {
+  70.902% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  64.533% {
+  74.103% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -325,7 +355,7 @@
   }
 }
 #Before_T_Merah {
-  animation: kf_Before_T_Merah_path-trim_0 1.5s linear infinite;
+  animation: kf_Before_T_Merah_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_After_2Kompresor_Merah_path-trim_0 {
   0% {
@@ -333,13 +363,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  55.667% {
+  61.3% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  62.333% {
+  70.244% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -351,19 +381,19 @@
   }
 }
 #After_2Kompresor_Merah {
-  animation: kf_After_2Kompresor_Merah_path-trim_0 1.5s linear infinite;
+  animation: kf_After_2Kompresor_Merah_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_T_Lurus_Merah_path-trim_0 {
   0% {
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  62.133% {
+  70.244% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  68.8% {
+  79.943% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -374,7 +404,7 @@
 }
 #T_Lurus_Merah {
   stroke-dashoffset: 0;
-  animation: kf_T_Lurus_Merah_path-trim_0 1.5s linear infinite;
+  animation: kf_T_Lurus_Merah_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_T_Merah_Atas_path-trim_0 {
   0% {
@@ -382,13 +412,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  64.733% {
+  74.103% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  66.933% {
+  77.304% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -400,7 +430,7 @@
   }
 }
 #T_Merah_Atas {
-  animation: kf_T_Merah_Atas_path-trim_0 1.5s linear infinite;
+  animation: kf_T_Merah_Atas_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_After_T_Merah_2_path-trim_0 {
   0% {
@@ -408,13 +438,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  68.8% {
+  79.922% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  75.467% {
+  89.622% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -426,7 +456,7 @@
   }
 }
 #After_T_Merah_2 {
-  animation: kf_After_T_Merah_2_path-trim_0 1.5s linear infinite;
+  animation: kf_After_T_Merah_2_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Before_Kompresor1_Biru_path-trim_0 {
   0% {
@@ -434,13 +464,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  52.933% {
+  58.099% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  55.133% {
+  61.3% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -452,7 +482,7 @@
   }
 }
 #Before_Kompresor1_Biru {
-  animation: kf_Before_Kompresor1_Biru_path-trim_0 1.5s linear infinite;
+  animation: kf_Before_Kompresor1_Biru_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Biru_Tua_Panjang_1_path-trim_0 {
   0% {
@@ -460,13 +490,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  50.467% {
+  54.898% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  52.667% {
+  58.099% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -478,19 +508,19 @@
   }
 }
 #Biru_Tua_Panjang_1 {
-  animation: kf_Biru_Tua_Panjang_1_path-trim_0 1.5s linear infinite;
+  animation: kf_Biru_Tua_Panjang_1_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_L_Biru_1_path-trim_0 {
   0% {
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  48.267% {
+  51.697% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  50.467% {
+  54.898% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -501,7 +531,7 @@
 }
 #L_Biru_1 {
   stroke-dashoffset: 0;
-  animation: kf_L_Biru_1_path-trim_0 1.5s linear infinite;
+  animation: kf_L_Biru_1_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_After_Motor_1_path-trim_0 {
   0% {
@@ -509,13 +539,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  46.067% {
+  48.497% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  48.267% {
+  51.697% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -527,19 +557,19 @@
   }
 }
 #After_Motor_1 {
-  animation: kf_After_Motor_1_path-trim_0 1.5s linear infinite;
+  animation: kf_After_Motor_1_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Biru_Muda_1_path-trim_0 {
   0% {
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  39.4% {
+  38.797% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  46.067% {
+  48.497% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -550,7 +580,7 @@
 }
 #Biru_Muda_1 {
   stroke-dashoffset: 0;
-  animation: kf_Biru_Muda_1_path-trim_0 1.5s linear infinite;
+  animation: kf_Biru_Muda_1_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Before_kompresor_2_Biru_Tua_path-trim_0 {
   0% {
@@ -558,13 +588,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  52.933% {
-    animation-timing-function: ease-out;
+  58.099% {
+    animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  55.133% {
+  61.3% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -576,7 +606,7 @@
   }
 }
 #Before_kompresor_2_Biru_Tua {
-  animation: kf_Before_kompresor_2_Biru_Tua_path-trim_0 1.5s linear infinite;
+  animation: kf_Before_kompresor_2_Biru_Tua_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Biru_2Tua_Panjang_path-trim_0 {
   0% {
@@ -584,13 +614,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  50.467% {
+  54.898% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  52.667% {
+  58.099% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -602,19 +632,19 @@
   }
 }
 #Biru_2Tua_Panjang {
-  animation: kf_Biru_2Tua_Panjang_path-trim_0 1.5s linear infinite;
+  animation: kf_Biru_2Tua_Panjang_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_L_biru_Tua_2_path-trim_0 {
   0% {
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  48.267% {
-    animation-timing-function: ease-out;
+  51.697% {
+    animation-timing-function: linear;
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  50.467% {
+  54.898% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -625,7 +655,7 @@
 }
 #L_biru_Tua_2 {
   stroke-dashoffset: 0;
-  animation: kf_L_biru_Tua_2_path-trim_0 1.5s linear infinite;
+  animation: kf_L_biru_Tua_2_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_After_Motor_2_path-trim_0 {
   0% {
@@ -633,13 +663,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  46.067% {
-    animation-timing-function: ease-out;
+  48.497% {
+    animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  48.267% {
+  51.697% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -651,19 +681,19 @@
   }
 }
 #After_Motor_2 {
-  animation: kf_After_Motor_2_path-trim_0 1.5s linear infinite;
+  animation: kf_After_Motor_2_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_After_2Kompresor_Biru_muda_path-trim_0 {
   0% {
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  39.4% {
-    animation-timing-function: ease-out;
+  38.797% {
+    animation-timing-function: linear;
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  46.067% {
+  48.497% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -674,19 +704,19 @@
 }
 #After_2Kompresor_Biru_muda {
   stroke-dashoffset: 0;
-  animation: kf_After_2Kompresor_Biru_muda_path-trim_0 1.5s linear infinite;
+  animation: kf_After_2Kompresor_Biru_muda_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Before_1Kompresor_Atas_Kuning_path-trim_0 {
   0% {
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  19.467% {
+  29.098% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  26.133% {
+  38.797% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -697,19 +727,19 @@
 }
 #Before_1Kompresor_Atas_Kuning {
   stroke-dashoffset: 0;
-  animation: kf_Before_1Kompresor_Atas_Kuning_path-trim_0 1.5s linear infinite;
+  animation: kf_Before_1Kompresor_Atas_Kuning_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_L_Kuning_2_path-trim_0 {
   0% {
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  17.267% {
+  25.8% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  19.467% {
+  29.001% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -720,19 +750,19 @@
 }
 #L_Kuning_2 {
   stroke-dashoffset: 0;
-  animation: kf_L_Kuning_2_path-trim_0 1.5s linear infinite;
+  animation: kf_L_Kuning_2_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Before_L_Kuning_2_path-trim_0 {
   0% {
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  15.067% {
+  22.599% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  17.267% {
+  25.8% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -743,19 +773,19 @@
 }
 #Before_L_Kuning_2 {
   stroke-dashoffset: 0;
-  animation: kf_Before_L_Kuning_2_path-trim_0 1.5s linear infinite;
+  animation: kf_Before_L_Kuning_2_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_After_T_Kuning_path-trim_0 {
   0% {
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  13% {
+  19.399% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  15% {
+  22.599% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -766,19 +796,19 @@
 }
 #After_T_Kuning {
   stroke-dashoffset: 0;
-  animation: kf_After_T_Kuning_path-trim_0 1.5s linear infinite;
+  animation: kf_After_T_Kuning_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_Before_2Kompresor_Kuning_path-trim_0 {
   0% {
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  18.95% {
+  29.098% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  25.616% {
+  38.797% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -789,7 +819,7 @@
 }
 #Before_2Kompresor_Kuning {
   stroke-dashoffset: 0;
-  animation: kf_Before_2Kompresor_Kuning_path-trim_0 1.5s linear infinite;
+  animation: kf_Before_2Kompresor_Kuning_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_T_Kuning_Lurus_path-trim_0 {
   0% {
@@ -797,13 +827,13 @@
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  6.667% {
+  9.699% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     stroke-dashoffset: -1;
     visibility: hidden;
   }
-  13.333% {
+  19.399% {
     stroke-dasharray: 1 1;
     stroke-dashoffset: 0;
     visibility: visible;
@@ -815,19 +845,19 @@
   }
 }
 #T_Kuning_Lurus {
-  animation: kf_T_Kuning_Lurus_path-trim_0 1.5s linear infinite;
+  animation: kf_T_Kuning_Lurus_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_T_Kuning_Atas_path-trim_0 {
   0% {
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  11.067% {
+  16.164% {
     animation-timing-function: linear;
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  13% {
+  19.399% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -838,7 +868,7 @@
 }
 #T_Kuning_Atas {
   stroke-dashoffset: 0;
-  animation: kf_T_Kuning_Atas_path-trim_0 1.5s linear infinite;
+  animation: kf_T_Kuning_Atas_path-trim_0 2.062s linear infinite;
 }
 @keyframes kf_After_Bejana_kuning_path-trim_0 {
   0% {
@@ -846,7 +876,7 @@
     stroke-dasharray: 0 1;
     visibility: hidden;
   }
-  6.667% {
+  9.699% {
     stroke-dasharray: 1 1;
     visibility: visible;
   }
@@ -857,19 +887,19 @@
 }
 #After_Bejana_kuning {
   stroke-dashoffset: 0;
-  animation: kf_After_Bejana_kuning_path-trim_0 1.5s linear infinite;
+  animation: kf_After_Bejana_kuning_path-trim_0 2.062s linear infinite;
 }
 </style>
-<g id="Sim_2D" clip-path="url(#clip0_1_2)">
+<g id="Sim_2D" clip-path="url(#clip0_2028_1030)">
 <rect width="1440" height="1024" id="Sim_2D_bg_0" fill="black">
 </rect>
 <g id="Inlet-Outlet" transform="translate(458 336)">
 <g id="Alat" transform="translate(300)">
-<g id="Kompres_1" clip-path="url(#clip1_1_2)">
+<g id="Kompres_1" clip-path="url(#clip1_2028_1030)">
 <path id="Vector" transform="translate(68.475 58.3611)" d="M4.15 0H2.075C0.929009 0 0 0.950151 0 2.12222V88.0722C0 89.2443 0.929009 90.1945 2.075 90.1945H4.15C5.29599 90.1945 6.225 89.2443 6.225 88.0722V2.12222C6.225 0.950151 5.29599 0 4.15 0Z" fill="#1A1A1A"/>
 <path id="Vector_2" transform="translate(174.3 58.3611)" d="M4.15 0H2.075C0.929009 0 0 0.950151 0 2.12222V88.0722C0 89.2443 0.929009 90.1945 2.075 90.1945H4.15C5.29599 90.1945 6.225 89.2443 6.225 88.0722V2.12222C6.225 0.950151 5.29599 0 4.15 0Z" fill="#1A1A1A"/>
 <path id="Vector_3" transform="translate(41.5 123.844)" d="M151.475 0H14.525C6.50306 0 0 6.65106 0 14.8556C0 23.0601 6.50306 29.7111 14.525 29.7111H151.475C159.497 29.7111 166 23.0601 166 14.8556C166 6.65106 159.497 0 151.475 0Z" fill="#71717A" stroke="#1A1A1A" stroke-width="4"/>
-<path id="Vector_4" transform="translate(41.5 123.844)" d="M14.525 0C10.6727 0 6.97824 1.56513 4.25427 4.35109C1.53031 7.13705 0 10.9156 0 14.8556C0 18.7955 1.53031 22.5741 4.25427 25.36C6.97824 28.146 10.6727 29.7111 14.525 29.7111V0Z" fill="#EF4444" stroke="#1A1A1A" stroke-width="4"/>
+<path id="Vector_4" transform="translate(41.5 123.844)" d="M14.525 0C10.6727 0 6.97824 1.56513 4.25427 4.35109C1.53031 7.13704 0 10.9156 0 14.8556C0 18.7955 1.53031 22.5741 4.25427 25.36C6.97824 28.146 10.6727 29.7111 14.525 29.7111V0Z" fill="#71717A" stroke="#1A1A1A" stroke-width="4"/>
 <path id="Vector_5" transform="translate(192.975 123.844)" d="M0 0C3.85227 0 7.54676 1.56513 10.2707 4.35109C12.9947 7.13705 14.525 10.9156 14.525 14.8556C14.525 18.7955 12.9947 22.5741 10.2707 25.36C7.54676 28.146 3.85227 29.7111 0 29.7111V0Z" fill="#2563EB" stroke="#1A1A1A" stroke-width="4"/>
 <path id="Vector_6" transform="translate(36.3125 55.1778)" d="M147.325 0H29.05C13.0061 0 0 13.3021 0 29.7111C0 46.1201 13.0061 59.4222 29.05 59.4222H147.325C163.369 59.4222 176.375 46.1201 176.375 29.7111C176.375 13.3021 163.369 0 147.325 0Z" fill="#94A3B8" stroke="#1A1A1A" stroke-width="4"/>
 <path id="Vector_7" transform="translate(18.675 74.2778)" d="M17.6375 0H0V19.1H17.6375V0Z" fill="#F59E0B" stroke="#1A1A1A" stroke-width="4"/>
@@ -880,17 +910,17 @@
 <path id="Vector_12" transform="translate(159.775 96.2556)" d="M5.1875 0H1.0375C0.464505 0 0 0.475076 0 1.06111V5.30555C0 5.89159 0.464505 6.36667 1.0375 6.36667H5.1875C5.76049 6.36667 6.225 5.89159 6.225 5.30555V1.06111C6.225 0.475076 5.76049 0 5.1875 0Z" fill="#1A1A1A"/>
 <path id="Vector_13" transform="translate(159.775 108.989)" d="M5.1875 0H1.0375C0.464505 0 0 0.475076 0 1.06111V5.30555C0 5.89159 0.464505 6.36667 1.0375 6.36667H5.1875C5.76049 6.36667 6.225 5.89159 6.225 5.30555V1.06111C6.225 0.475076 5.76049 0 5.1875 0Z" fill="#1A1A1A"/>
 <path id="Vector_14" transform="translate(83 10.6111)" d="M0 44.5667V14.8556C0 6.36667 6.225 0 14.525 0H88.1875V44.5667" stroke="#1A1A1A" stroke-width="16" stroke-linecap="square" stroke-linejoin="round"/>
-<path id="Vector_15" transform="translate(83 11)" d="M0 40.3222V10.6111C0 0 6.225 0 14.525 0H51.875" pathLength="1" stroke="#2563EB" stroke-width="8" stroke-linecap="square" stroke-dasharray="1 1"/>
-<path id="Vector_16" transform="translate(138 11)" d="M0 0H36.3125C32.1625 0 32.1625 0 32.1625 0V40.3222" pathLength="1" stroke="#2563EB" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<path id="Vector_15" transform="translate(83 11)" d="M0 40.3222V10.6111C0 0 6.225 0 14.525 0H51.875" pathLength="1" stroke="#0022FF" stroke-width="8" stroke-linecap="square" stroke-dasharray="1 1"/>
+<path id="Vector_16" transform="translate(139 11)" d="M0 0H32V40" pathLength="1" stroke="#0022FF" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray="1 1"/>
 <path id="Vector_17" transform="translate(70.55 46.6889)" d="M24.9 0H0V8.48889H24.9V0Z" fill="#475569" stroke="#1A1A1A" stroke-width="4"/>
 <path id="Vector_18" transform="translate(50 58)" d="M12.5 0V112M0 112H25" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round"/>
 <path id="Vector_19" transform="translate(174 58)" d="M12.5 0V112M0 112H25" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round"/>
 </g>
-<g id="Kompres_2" clip-path="url(#clip2_1_2)" transform="translate(0 331)">
+<g id="Kompres_2" clip-path="url(#clip2_2028_1030)" transform="translate(0 331)">
 <path id="Vector_20" transform="translate(68.475 58.3611)" d="M4.15 0H2.075C0.929009 0 0 0.950151 0 2.12222V88.0722C0 89.2443 0.929009 90.1945 2.075 90.1945H4.15C5.29599 90.1945 6.225 89.2443 6.225 88.0722V2.12222C6.225 0.950151 5.29599 0 4.15 0Z" fill="#1A1A1A"/>
 <path id="Vector_21" transform="translate(174.3 58.3611)" d="M4.15 0H2.075C0.929009 0 0 0.950151 0 2.12222V88.0722C0 89.2443 0.929009 90.1945 2.075 90.1945H4.15C5.29599 90.1945 6.225 89.2443 6.225 88.0722V2.12222C6.225 0.950151 5.29599 0 4.15 0Z" fill="#1A1A1A"/>
 <path id="Vector_22" transform="translate(41.5 123.844)" d="M151.475 0H14.525C6.50306 0 0 6.65106 0 14.8556C0 23.0601 6.50306 29.7111 14.525 29.7111H151.475C159.497 29.7111 166 23.0601 166 14.8556C166 6.65106 159.497 0 151.475 0Z" fill="#71717A" stroke="#1A1A1A" stroke-width="4"/>
-<path id="Vector_23" transform="translate(41.5 123.844)" d="M14.525 0C10.6727 0 6.97824 1.56513 4.25427 4.35109C1.53031 7.13705 0 10.9156 0 14.8556C0 18.7955 1.53031 22.5741 4.25427 25.36C6.97824 28.146 10.6727 29.7111 14.525 29.7111V0Z" fill="#EF4444" stroke="#1A1A1A" stroke-width="4"/>
+<path id="Vector_23" transform="translate(41.5 123.844)" d="M14.525 0C10.6727 0 6.97824 1.56513 4.25427 4.35109C1.53031 7.13704 0 10.9156 0 14.8556C0 18.7955 1.53031 22.5741 4.25427 25.36C6.97824 28.146 10.6727 29.7111 14.525 29.7111V0Z" fill="#71717A" stroke="#1A1A1A" stroke-width="4"/>
 <path id="Vector_24" transform="translate(192.975 123.844)" d="M0 0C3.85227 0 7.54676 1.56513 10.2707 4.35109C12.9947 7.13705 14.525 10.9156 14.525 14.8556C14.525 18.7955 12.9947 22.5741 10.2707 25.36C7.54676 28.146 3.85227 29.7111 0 29.7111V0Z" fill="#2563EB" stroke="#1A1A1A" stroke-width="4"/>
 <path id="Vector_25" transform="translate(36.3125 55.1778)" d="M147.325 0H29.05C13.0061 0 0 13.3021 0 29.7111C0 46.1201 13.0061 59.4222 29.05 59.4222H147.325C163.369 59.4222 176.375 46.1201 176.375 29.7111C176.375 13.3021 163.369 0 147.325 0Z" fill="#94A3B8" stroke="#1A1A1A" stroke-width="4"/>
 <path id="Vector_26" transform="translate(18.675 74.2778)" d="M17.6375 0H0V19.1H17.6375V0Z" fill="#F59E0B" stroke="#1A1A1A" stroke-width="4"/>
@@ -902,7 +932,7 @@
 <path id="Vector_32" transform="translate(159.775 108.989)" d="M5.1875 0H1.0375C0.464505 0 0 0.475076 0 1.06111V5.30555C0 5.89159 0.464505 6.36667 1.0375 6.36667H5.1875C5.76049 6.36667 6.225 5.89159 6.225 5.30555V1.06111C6.225 0.475076 5.76049 0 5.1875 0Z" fill="#1A1A1A"/>
 <path id="Vector_33" transform="translate(83 10.6111)" d="M0 44.5667V14.8556C0 6.36667 6.225 0 14.525 0H88.1875V44.5667" stroke="#1A1A1A" stroke-width="16" stroke-linecap="square" stroke-linejoin="round"/>
 <path id="Vector_34" transform="translate(83 11)" d="M0 40.3222V10.6111C0 0 6.225 0 14.525 0H51.875" pathLength="1" stroke="#2563EB" stroke-width="8" stroke-linecap="square" stroke-dasharray="1 1"/>
-<path id="Vector_35" transform="translate(138 11)" d="M0 0H36.3125C32.1625 0 32.1625 0 32.1625 0V40.3222" pathLength="1" stroke="#2563EB" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<path id="Vector_35" transform="translate(139 11)" d="M0 0H32V40" pathLength="1" stroke="#2563EB" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray="1 1"/>
 <path id="Vector_36" transform="translate(70.55 46.6889)" d="M24.9 0H0V8.48889H24.9V0Z" fill="#475569" stroke="#1A1A1A" stroke-width="4"/>
 <path id="Vector_37" transform="translate(174 58)" d="M12.5 0V112M0 112H25" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round"/>
 <path id="Vector_38" transform="translate(50 58)" d="M12.5 0V112M0 112H25" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round"/>
@@ -942,46 +972,46 @@
 </g>
 </g>
 <g id="Inlet_Bejana" transform="translate(0 72)">
-<g id="Out_Kompresor_Merah_1" clip-path="url(#clip3_1_2)" transform="translate(291 44)">
+<g id="Out_Kompresor_Merah_1" clip-path="url(#clip3_2028_1030)" transform="translate(291 44)">
 <path id="Vector_66" transform="translate(0 23)" d="M0 0H63" stroke="#111827" stroke-width="34"/>
-<path id="After_1Kompresor_Merah" transform="translate(0 23)" d="M0 0H49" pathLength="1" stroke="#DC2626" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="After_1Kompresor_Merah" transform="translate(0 23)" d="M0 0H49" pathLength="1" stroke="#0022FF" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_67" transform="translate(51)" d="M8 0H2C0.89543 0 0 0.89543 0 2V44C0 45.1046 0.89543 46 2 46H8C9.10457 46 10 45.1046 10 44V2C10 0.89543 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_68" transform="translate(54 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_69" transform="translate(54 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="L_Merah" clip-path="url(#clip4_1_2)" transform="matrix(0 -1 1 0 201 90)">
+<g id="L_Merah" clip-path="url(#clip4_2028_1030)" transform="matrix(0 -1 1 0 201 90)">
 <path id="Vector_70" transform="translate(0 23)" d="M0 0H23V67" stroke="#111827" stroke-width="34" stroke-linejoin="round"/>
-<path id="L_Merah_2" transform="translate(0 23)" d="M0 0H23V51" pathLength="1" stroke="#DC2626" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<path id="L_Merah_2" transform="translate(0 23)" d="M0 0H23V51" pathLength="1" stroke="#0022FF" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
 <path id="Vector_71" transform="translate(0 76)" d="M44 0H2C0.89543 0 0 0.89543 0 2V8C0 9.10457 0.89543 10 2 10H44C45.1046 10 46 9.10457 46 8V2C46 0.89543 45.1046 0 44 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_72" transform="translate(4 79)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_73" transform="translate(38 79)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="After_L_Merah" clip-path="url(#clip5_1_2)" transform="matrix(0 -1 1 0 201 204.034)">
+<g id="After_L_Merah" clip-path="url(#clip5_2028_1030)" transform="matrix(0 -1 1 0 201 204.034)">
 <path id="Vector_74" transform="translate(0 23)" d="M0 0H114.034" stroke="#111827" stroke-width="34"/>
-<path id="After_L_Merah_2" transform="translate(0.0335693 23)" d="M0 0H114" pathLength="1" stroke="#DC2626" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="After_L_Merah_2" transform="translate(0.0335693 23)" d="M0 0H98" pathLength="1" stroke="#0022FF" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_75" transform="translate(100.73)" d="M7.60224 0H1.90056C0.850909 0 0 0.89543 0 2V44C0 45.1046 0.850909 46 1.90056 46H7.60224C8.65189 46 9.5028 45.1046 9.5028 44V2C9.5028 0.89543 8.65189 0 7.60224 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_76" transform="translate(103.58 4)" d="M1.90056 4C2.95021 4 3.80112 3.10457 3.80112 2C3.80112 0.89543 2.95021 0 1.90056 0C0.850909 0 0 0.89543 0 2C0 3.10457 0.850909 4 1.90056 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_77" transform="translate(103.58 38)" d="M1.90056 4C2.95021 4 3.80112 3.10457 3.80112 2C3.80112 0.89543 2.95021 0 1.90056 0C0.850909 0 0 0.89543 0 2C0 3.10457 0.850909 4 1.90056 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="After_T_Merah" clip-path="url(#clip6_1_2)" transform="matrix(0 -1 1 0 201 330.177)">
+<g id="After_T_Merah" clip-path="url(#clip6_2028_1030)" transform="matrix(0 -1 1 0 201 330.177)">
 <path id="Vector_78" transform="translate(0 23)" d="M0 0H126.143" stroke="#111827" stroke-width="34"/>
-<path id="Before_T_Merah" transform="translate(0.176819 23)" d="M0 0H109" pathLength="1" stroke="#DC2626" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="Before_T_Merah" transform="translate(0.176819 23)" d="M0 0H109" pathLength="1" stroke="#0022FF" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_79" transform="translate(111.006)" d="M8.07317 0H2.01829C0.90362 0 0 0.89543 0 2V44C0 45.1046 0.90362 46 2.01829 46H8.07317C9.18784 46 10.0915 45.1046 10.0915 44V2C10.0915 0.89543 9.18784 0 8.07317 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_80" transform="translate(114.034 4)" d="M2.01829 4C3.13297 4 4.03659 3.10457 4.03659 2C4.03659 0.89543 3.13297 0 2.01829 0C0.90362 0 0 0.89543 0 2C0 3.10457 0.90362 4 2.01829 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_81" transform="translate(114.034 38)" d="M2.01829 4C3.13297 4 4.03659 3.10457 4.03659 2C4.03659 0.89543 3.13297 0 2.01829 0C0.90362 0 0 0.89543 0 2C0 3.10457 0.90362 4 2.01829 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="Out_Kompresor_2" clip-path="url(#clip7_1_2)" transform="translate(274 374.579)">
+<g id="Out_Kompresor_2" clip-path="url(#clip7_2028_1030)" transform="translate(274 374.579)">
 <path id="Vector_82" transform="translate(0 23.2104)" d="M0 0H80" stroke="#111827" stroke-width="34"/>
-<path id="After_2Kompresor_Merah" transform="translate(0 23.4208)" d="M0 0H67" pathLength="1" stroke="#DC2626" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="After_2Kompresor_Merah" transform="translate(0 23.4208)" d="M0 0H67" pathLength="1" stroke="#0022FF" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_83" transform="translate(68 0.420776)" d="M8 0H2C0.89543 0 0 0.89543 0 2V44C0 45.1046 0.89543 46 2 46H8C9.10457 46 10 45.1046 10 44V2C10 0.89543 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_84" transform="translate(71 4.42078)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_85" transform="translate(71 38.4208)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="T_Merah" clip-path="url(#clip8_1_2)" transform="matrix(-1 0 0 -1 274 421)">
+<g id="T_Merah" clip-path="url(#clip8_2028_1030)" transform="matrix(-1 0 0 -1 274 421)">
 <path id="Vector_86" transform="translate(0 23.2104)" d="M0 0H100" stroke="#111827" stroke-width="34"/>
 <path id="Vector_87" transform="translate(50 23.2104)" d="M0 0V67.6128" stroke="#111827" stroke-width="34"/>
-<path id="T_Lurus_Merah" transform="translate(16 23)" d="M0 0H68" pathLength="1" stroke="#DC2626" stroke-width="26" stroke-dasharray="1 1"/>
-<path id="T_Merah_Atas" transform="matrix(0 1 -1 0 50 35)" d="M0 0H42" pathLength="1" stroke="#DC2626" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="T_Lurus_Merah" transform="translate(16 23)" d="M0 0H68" pathLength="1" stroke="#0022FF" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="T_Merah_Atas" transform="matrix(0 1 -1 0 50 35)" d="M0 0H42" pathLength="1" stroke="#0022FF" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_88" transform="translate(4)" d="M8 0H2C0.89543 0 0 0.90362 0 2.01829V44.4024C0 45.5171 0.89543 46.4207 2 46.4207H8C9.10457 46.4207 10 45.5171 10 44.4024V2.01829C10 0.90362 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_89" transform="translate(7 4.03659)" d="M2 4.03659C3.10457 4.03659 4 3.13297 4 2.01829C4 0.90362 3.10457 0 2 0C0.89543 0 0 0.90362 0 2.01829C0 3.13297 0.89543 4.03659 2 4.03659Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_90" transform="translate(7 38.3476)" d="M2 4.03659C3.10457 4.03659 4 3.13297 4 2.01829C4 0.90362 3.10457 0 2 0C0.89543 0 0 0.90362 0 2.01829C0 3.13297 0.89543 4.03659 2 4.03659Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
@@ -992,18 +1022,18 @@
 <path id="Vector_95" transform="translate(31 79.7226)" d="M2 4.03659C3.10457 4.03659 4 3.13297 4 2.01829C4 0.90362 3.10457 0 2 0C0.89543 0 0 0.90362 0 2.01829C0 3.13297 0.89543 4.03659 2 4.03659Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_96" transform="translate(65 79.7226)" d="M2 4.03659C3.10457 4.03659 4 3.13297 4 2.01829C4 0.90362 3.10457 0 2 0C0.89543 0 0 0.90362 0 2.01829C0 3.13297 0.89543 4.03659 2 4.03659Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="Frame" clip-path="url(#clip9_1_2)" transform="translate(0 374.579)">
+<g id="Frame" clip-path="url(#clip9_2028_1030)" transform="translate(0 374.579)">
 <path id="Vector_97" transform="translate(0 23.2104)" d="M0 0H174" stroke="#111827" stroke-width="34"/>
-<path id="After_T_Merah_2" transform="translate(16 23.4208)" d="M0 0H158" pathLength="1" stroke="#DC2626" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="After_T_Merah_2" transform="translate(16 23.4208)" d="M0 0H158" pathLength="1" stroke="#0022FF" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_98" transform="translate(4)" d="M8 0H2C0.89543 0 0 0.90362 0 2.01829V44.4024C0 45.5171 0.89543 46.4207 2 46.4207H8C9.10457 46.4207 10 45.5171 10 44.4024V2.01829C10 0.90362 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_99" transform="translate(7 4.03659)" d="M2 4.03659C3.10457 4.03659 4 3.13297 4 2.01829C4 0.90362 3.10457 0 2 0C0.89543 0 0 0.90362 0 2.01829C0 3.13297 0.89543 4.03659 2 4.03659Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_100" transform="translate(7 38.3476)" d="M2 4.03659C3.10457 4.03659 4 3.13297 4 2.01829C4 0.90362 3.10457 0 2 0C0.89543 0 0 0.90362 0 2.01829C0 3.13297 0.89543 4.03659 2 4.03659Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
 </g>
 <g id="Heat_Ex2" transform="translate(495 17)">
-<g id="Frame_2" clip-path="url(#clip10_1_2)" transform="translate(0 99)">
+<g id="Frame_2" clip-path="url(#clip10_2028_1030)" transform="translate(0 99)">
 <path id="Vector_101" transform="translate(0 23)" d="M0 0H120" stroke="#111827" stroke-width="34"/>
-<path id="Before_Kompresor1_Biru" transform="translate(16 23)" d="M0 0H88" pathLength="1" stroke="#1D4ED8" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="Before_Kompresor1_Biru" transform="translate(16 23)" d="M0 0H88" pathLength="1" stroke="#00BBFF" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_102" transform="translate(4)" d="M8 0H2C0.89543 0 0 0.89543 0 2V44C0 45.1046 0.89543 46 2 46H8C9.10457 46 10 45.1046 10 44V2C10 0.89543 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_103" transform="translate(7 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_104" transform="translate(7 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
@@ -1011,28 +1041,28 @@
 <path id="Vector_106" transform="translate(109 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_107" transform="translate(109 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="Frame_3" clip-path="url(#clip11_1_2)" transform="translate(120 99)">
+<g id="Frame_3" clip-path="url(#clip11_2028_1030)" transform="translate(120 99)">
 <path id="Vector_108" transform="translate(0 23)" d="M0 0H192" stroke="#111827" stroke-width="34"/>
-<path id="Biru_Tua_Panjang_1" transform="translate(0 23)" d="M0 0H192" pathLength="1" stroke="#1D4ED8" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="Biru_Tua_Panjang_1" transform="translate(0 23)" d="M0 0H192" pathLength="1" stroke="#00BBFF" stroke-width="26" stroke-dasharray="1 1"/>
 </g>
-<g id="Frame_4" clip-path="url(#clip12_1_2)" transform="translate(421 99) rotate(90)">
+<g id="Frame_4" clip-path="url(#clip12_2028_1030)" transform="translate(421 99) rotate(90)">
 <ellipse id="Ellipse_28" transform="translate(20 32.7) rotate(-90)" cx="4.84444" cy="3" rx="4.84444" ry="3" fill="white"/>
 <path id="Vector_109" transform="translate(0 27.8556)" d="M0 0H23V81.1444" stroke="#111827" stroke-width="34" stroke-linejoin="round"/>
-<path id="L_Biru_1" transform="translate(2 28)" d="M0 0H21V62" pathLength="1" stroke="#1D4ED8" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<path id="L_Biru_1" transform="translate(2 28)" d="M0 0H21V62" pathLength="1" stroke="#00BBFF" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
 <path id="Vector_110" transform="translate(4.02145e-06 92)" d="M44 0H2C0.89543 0 0 0.89543 0 2V8C0 9.10457 0.89543 10 2 10H44C45.1046 10 46 9.10457 46 8V2C46 0.89543 45.1046 0 44 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_111" transform="translate(4 95)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_112" transform="translate(38 95)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="Frame_5" clip-path="url(#clip13_1_2)" transform="matrix(1.19249e-08 -1 -1 -1.19249e-08 421 90)">
+<g id="Frame_5" clip-path="url(#clip13_2028_1030)" transform="matrix(1.19249e-08 -1 -1 -1.19249e-08 421 90)">
 <path id="Vector_113" transform="translate(0 27.8556)" d="M0 0H23V81.1444" stroke="#111827" stroke-width="34" stroke-linejoin="round"/>
-<path id="After_Motor_1" transform="translate(3 28)" d="M0 0H20V62" pathLength="1" stroke="#1D4ED8" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<path id="After_Motor_1" transform="translate(3 28)" d="M0 0H20V62" pathLength="1" stroke="#00BBFF" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
 <path id="Vector_114" transform="translate(-1.09709e-06 92)" d="M44 0H2C0.89543 0 0 0.895431 0 2V8C0 9.10457 0.89543 10 2 10H44C45.1046 10 46 9.10457 46 8V2C46 0.895431 45.1046 0 44 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_115" transform="translate(4 95)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_116" transform="translate(38 95)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="Frame_6" clip-path="url(#clip14_1_2)" transform="translate(19 44)">
+<g id="Frame_6" clip-path="url(#clip14_2028_1030)" transform="translate(19 44)">
 <path id="Vector_117" transform="translate(0 23)" d="M0 0H121" stroke="#111827" stroke-width="34"/>
-<path id="Biru_Muda_1" transform="translate(16 23)" d="M0 0H89" pathLength="1" stroke="#38BDF8" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="Biru_Muda_1" transform="translate(16 23)" d="M0 0H89" pathLength="1" stroke="#00BBFF" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_118" transform="translate(4)" d="M8 0H2C0.89543 0 0 0.89543 0 2V44C0 45.1046 0.89543 46 2 46H8C9.10457 46 10 45.1046 10 44V2C10 0.89543 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_119" transform="translate(7 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_120" transform="translate(7 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
@@ -1045,9 +1075,9 @@
 <path id="Vector_126" transform="matrix(1.19249e-08 -1 -1 -1.19249e-08 379 96)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
 <g id="Heat_Ex1" transform="translate(495 348)">
-<g id="Biru_Tua_2_Pendek" clip-path="url(#clip15_1_2)" transform="translate(0 99)">
+<g id="Biru_Tua_2_Pendek" clip-path="url(#clip15_2028_1030)" transform="translate(0 99)">
 <path id="Vector_127" transform="translate(0 23)" d="M0 0H120" stroke="#111827" stroke-width="34"/>
-<path id="Before_kompresor_2_Biru_Tua" transform="translate(16 23)" d="M0 0H88" pathLength="1" stroke="#1D4ED8" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="Before_kompresor_2_Biru_Tua" transform="translate(16 23)" d="M0 0H88" pathLength="1" stroke="#00BBFF" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_128" transform="translate(4)" d="M8 0H2C0.89543 0 0 0.89543 0 2V44C0 45.1046 0.89543 46 2 46H8C9.10457 46 10 45.1046 10 44V2C10 0.89543 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_129" transform="translate(7 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_130" transform="translate(7 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
@@ -1055,27 +1085,27 @@
 <path id="Vector_132" transform="translate(109 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_133" transform="translate(109 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="Biru_Tua_2_Panjang" clip-path="url(#clip16_1_2)" transform="translate(120 99)">
+<g id="Biru_Tua_2_Panjang" clip-path="url(#clip16_2028_1030)" transform="translate(120 99)">
 <path id="Vector_134" transform="translate(0 23)" d="M0 0H192" stroke="#111827" stroke-width="34"/>
-<path id="Biru_2Tua_Panjang" transform="translate(0 23)" d="M0 0H192" pathLength="1" stroke="#1D4ED8" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="Biru_2Tua_Panjang" transform="translate(0 23)" d="M0 0H192" pathLength="1" stroke="#00BBFF" stroke-width="26" stroke-dasharray="1 1"/>
 </g>
-<g id="Belokan_Kiri_2" clip-path="url(#clip17_1_2)" transform="translate(421 99) rotate(90)">
+<g id="Belokan_Kiri_2" clip-path="url(#clip17_2028_1030)" transform="translate(421 99) rotate(90)">
 <path id="Vector_135" transform="translate(0 27.8556)" d="M0 0H23V81.1444" stroke="#111827" stroke-width="34" stroke-linejoin="round"/>
-<path id="L_biru_Tua_2" transform="translate(3 28)" d="M0 0H20V62" pathLength="1" stroke="#1D4ED8" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<path id="L_biru_Tua_2" transform="translate(3 28)" d="M0 0H20V62" pathLength="1" stroke="#00BBFF" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
 <path id="Vector_136" transform="translate(4.02145e-06 92)" d="M44 0H2C0.89543 0 0 0.89543 0 2V8C0 9.10457 0.89543 10 2 10H44C45.1046 10 46 9.10457 46 8V2C46 0.89543 45.1046 0 44 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_137" transform="translate(4 95)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_138" transform="translate(38 95)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="Belokan_Bawah_2" clip-path="url(#clip18_1_2)" transform="matrix(1.19249e-08 -1 -1 -1.19249e-08 421 90)">
+<g id="Belokan_Bawah_2" clip-path="url(#clip18_2028_1030)" transform="matrix(1.19249e-08 -1 -1 -1.19249e-08 421 90)">
 <path id="Vector_139" transform="translate(0 27.8556)" d="M0 0H23V81.1444" stroke="#111827" stroke-width="34" stroke-linejoin="round"/>
-<path id="After_Motor_2" transform="translate(2 28)" d="M0 0H21V62" pathLength="1" stroke="#1D4ED8" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<path id="After_Motor_2" transform="translate(2 28)" d="M0 0H21V62" pathLength="1" stroke="#00BBFF" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
 <path id="Vector_140" transform="translate(-1.09709e-06 92)" d="M44 0H2C0.89543 0 0 0.895431 0 2V8C0 9.10457 0.89543 10 2 10H44C45.1046 10 46 9.10457 46 8V2C46 0.895431 45.1046 0 44 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_141" transform="translate(4 95)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_142" transform="translate(38 95)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="Biru_Muda_2" clip-path="url(#clip19_1_2)" transform="translate(19 44)">
+<g id="Biru_Muda_2" clip-path="url(#clip19_2028_1030)" transform="translate(19 44)">
 <path id="Vector_143" transform="translate(0 23)" d="M0 0H121" stroke="#111827" stroke-width="34"/>
-<path id="After_2Kompresor_Biru_muda" transform="translate(16 23)" d="M0 0H89" pathLength="1" stroke="#38BDF8" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="After_2Kompresor_Biru_muda" transform="translate(16 23)" d="M0 0H89" pathLength="1" stroke="#00BBFF" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_144" transform="translate(4)" d="M8 0H2C0.89543 0 0 0.89543 0 2V44C0 45.1046 0.89543 46 2 46H8C9.10457 46 10 45.1046 10 44V2C10 0.89543 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_145" transform="translate(7 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_146" transform="translate(7 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
@@ -1088,46 +1118,46 @@
 <path id="Vector_152" transform="matrix(1.19249e-08 -1 -1 -1.19249e-08 378 97)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
 <g id="Outle_Bejana" transform="translate(0 17.0004)">
-<g id="In_Kompresor_Kuning_1" clip-path="url(#clip20_1_2)" transform="translate(238 43.9998)">
+<g id="In_Kompresor_Kuning_1" clip-path="url(#clip20_2028_1030)" transform="translate(238 43.9998)">
 <path id="Before_Kompresor_Atas_Kuning" transform="translate(0 23)" d="M0 0H97" stroke="#111827" stroke-width="34"/>
-<path id="Before_1Kompresor_Atas_Kuning" transform="translate(0 22.9998)" d="M0 0H82" pathLength="1" stroke="#F97316" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="Before_1Kompresor_Atas_Kuning" transform="translate(0 22.9998)" d="M0 0H82" pathLength="1" stroke="#FF0018" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_153" transform="translate(84)" d="M8 0H2C0.89543 0 0 0.89543 0 2V44C0 45.1046 0.89543 46 2 46H8C9.10457 46 10 45.1046 10 44V2C10 0.89543 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_154" transform="translate(87 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_155" transform="translate(87 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="L_Kuning" clip-path="url(#clip21_1_2)" transform="translate(148 90) rotate(-90)">
+<g id="L_Kuning" clip-path="url(#clip21_2028_1030)" transform="translate(148 90) rotate(-90)">
 <path id="Vector_156" transform="translate(0 23)" d="M0 0H23V67" stroke="#111827" stroke-width="34" stroke-linejoin="round"/>
-<path id="L_Kuning_2" transform="translate(0.000365206 23)" d="M0 0H23V51" pathLength="1" stroke="#F97316" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<path id="L_Kuning_2" transform="translate(0.000365206 23)" d="M0 0H23V51" pathLength="1" stroke="#FF0018" stroke-width="26" stroke-linejoin="round" stroke-dasharray="1 1"/>
 <path id="Vector_157" transform="translate(0 76)" d="M44 0H2C0.89543 0 0 0.89543 0 2V8C0 9.10457 0.89543 10 2 10H44C45.1046 10 46 9.10457 46 8V2C46 0.89543 45.1046 0 44 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_158" transform="translate(4 79)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_159" transform="translate(38 79)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="Before_L_Kuning" clip-path="url(#clip22_1_2)" transform="matrix(0 -1 1 0 148 210)">
+<g id="Before_L_Kuning" clip-path="url(#clip22_2028_1030)" transform="matrix(0 -1 1 0 148 210)">
 <path id="Vector_160" transform="translate(0 23)" d="M0 0H120" stroke="#111827" stroke-width="34"/>
-<path id="Before_L_Kuning_2" transform="translate(0 23)" d="M0 0H104" pathLength="1" stroke="#F97316" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="Before_L_Kuning_2" transform="translate(0 23)" d="M0 0H104" pathLength="1" stroke="#FF0018" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_161" transform="translate(106)" d="M8 0H2C0.89543 0 0 0.89543 0 2V44C0 45.1046 0.89543 46 2 46H8C9.10457 46 10 45.1046 10 44V2C10 0.89543 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_162" transform="translate(109 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_163" transform="translate(109 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="After_T_Kuning_Atas" clip-path="url(#clip23_1_2)" transform="matrix(0 -1 1 0 148 330)">
+<g id="After_T_Kuning_Atas" clip-path="url(#clip23_2028_1030)" transform="matrix(0 -1 1 0 148 330)">
 <path id="Vector_164" transform="translate(0 23)" d="M0 0H120" stroke="#111827" stroke-width="34"/>
-<path id="After_T_Kuning" transform="translate(0 23)" d="M0 0H104" pathLength="1" stroke="#F97316" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="After_T_Kuning" transform="translate(0 23)" d="M0 0H104" pathLength="1" stroke="#FF0018" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_165" transform="translate(106)" d="M8 0H2C0.89543 0 0 0.89543 0 2V44C0 45.1046 0.89543 46 2 46H8C9.10457 46 10 45.1046 10 44V2C10 0.89543 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_166" transform="translate(109 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_167" transform="translate(109 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="In_Kompresor_Kuning__2" clip-path="url(#clip24_1_2)" transform="translate(221 374)">
+<g id="In_Kompresor_Kuning__2" clip-path="url(#clip24_2028_1030)" transform="translate(221 374)">
 <path id="Vector_168" transform="translate(0 23)" d="M0 0H114" stroke="#111827" stroke-width="34"/>
-<path id="Before_2Kompresor_Kuning" transform="translate(0 23)" d="M0 0H99" pathLength="1" stroke="#F97316" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="Before_2Kompresor_Kuning" transform="translate(0 23)" d="M0 0H99" pathLength="1" stroke="#FF0018" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_169" transform="translate(100.7)" d="M7.6 0H1.9C0.850659 0 0 0.89543 0 2V44C0 45.1046 0.850659 46 1.9 46H7.6C8.64934 46 9.5 45.1046 9.5 44V2C9.5 0.89543 8.64934 0 7.6 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_170" transform="translate(104 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_171" transform="translate(104 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="T_Kuning" clip-path="url(#clip25_1_2)" transform="matrix(-1 0 0 -1 221 420)">
+<g id="T_Kuning" clip-path="url(#clip25_2028_1030)" transform="matrix(-1 0 0 -1 221 420)">
 <path id="Vector_172" transform="translate(0 23)" d="M0 0H100" stroke="#111827" stroke-width="34"/>
 <path id="Vector_173" transform="translate(50 23)" d="M0 0V67" stroke="#111827" stroke-width="34"/>
-<path id="T_Kuning_Lurus" transform="translate(16 23)" d="M0 0H68" pathLength="1" stroke="#F97316" stroke-width="26" stroke-dasharray="1 1"/>
-<path id="T_Kuning_Atas" transform="translate(50 36)" d="M0 0V40" pathLength="1" stroke="#F97316" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="T_Kuning_Lurus" transform="translate(16 23)" d="M0 0H68" pathLength="1" stroke="#FF0018" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="T_Kuning_Atas" transform="translate(50 36)" d="M0 0V40" pathLength="1" stroke="#FF0018" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_174" transform="translate(4)" d="M8 0H2C0.89543 0 0 0.89543 0 2V44C0 45.1046 0.89543 46 2 46H8C9.10457 46 10 45.1046 10 44V2C10 0.89543 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_175" transform="translate(7 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_176" transform="translate(7 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
@@ -1138,9 +1168,9 @@
 <path id="Vector_181" transform="translate(31 79)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_182" transform="translate(65 79)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 </g>
-<g id="After_Bejana_Kuning" clip-path="url(#clip26_1_2)" transform="translate(0 374)">
+<g id="After_Bejana_Kuning" clip-path="url(#clip26_2028_1030)" transform="translate(0 374)">
 <path id="Vector_183" transform="translate(0 23)" d="M0 0H121" stroke="#111827" stroke-width="34"/>
-<path id="After_Bejana_kuning" transform="translate(16 23)" d="M0 0H105" pathLength="1" stroke="#F97316" stroke-width="26" stroke-dasharray="1 1"/>
+<path id="After_Bejana_kuning" transform="translate(16 23)" d="M0 0H105" pathLength="1" stroke="#FF0018" stroke-width="26" stroke-dasharray="1 1"/>
 <path id="Vector_184" transform="translate(4)" d="M8 0H2C0.89543 0 0 0.89543 0 2V44C0 45.1046 0.89543 46 2 46H8C9.10457 46 10 45.1046 10 44V2C10 0.89543 9.10457 0 8 0Z" fill="#475569" stroke="#111827" stroke-width="4"/>
 <path id="Vector_185" transform="translate(7 4)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
 <path id="Vector_186" transform="translate(7 38)" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4Z" fill="#94A3B8" stroke="#111827" stroke-width="1.5"/>
@@ -1150,23 +1180,23 @@
 <g id="Bejana" transform="translate(65 191)">
 <path id="Air_Moderat" transform="translate(57 133)" d="M336 520.563C298.682 568.635 237.344 600 168 600C98.6561 600 37.3175 568.635 0 520.563V40.5635H0.0107422C0.00465926 40.4227 0 40.2818 0 40.1406C0.000491821 17.9716 75.2165 1.18254e-05 168 0C260.784 0 336 17.9715 336 40.1406C336 40.2818 335.995 40.4227 335.989 40.5635H336V520.563Z" fill="#00EEFF" fill-opacity="0.3"/>
 <g id="Teras" transform="translate(57 479)">
-<mask id="path-218-outside-1_1_2" maskUnits="userSpaceOnUse" x="-1" y="-1" width="338" height="217" fill="black">
+<mask id="path-218-outside-1_2028_1030" maskUnits="userSpaceOnUse" x="-1" y="-1" width="338" height="217" fill="black">
 <rect fill="white" x="-1" y="-1" width="338" height="217"/>
 <path d="M167.5 0C240.678 0 300 14.5507 300 32.5C300 32.667 299.994 32.8336 299.983 33H300V75H336V140H300V183H299.983C298.894 200.719 239.997 215 167.5 215C95.0031 215 36.1062 200.719 35.0166 183H35V140H0V75H35V33H35.0166C35.0064 32.8336 35 32.667 35 32.5C35 14.5507 94.3223 0 167.5 0Z"/>
 </mask>
 <path d="M167.5 0C240.678 0 300 14.5507 300 32.5C300 32.667 299.994 32.8336 299.983 33H300V75H336V140H300V183H299.983C298.894 200.719 239.997 215 167.5 215C95.0031 215 36.1062 200.719 35.0166 183H35V140H0V75H35V33H35.0166C35.0064 32.8336 35 32.667 35 32.5C35 14.5507 94.3223 0 167.5 0Z" id="Teras_bg_0" fill="#D9D9D9">
 </path>
-<path d="M299.983 33L299.484 32.9693L299.452 33.5H299.983V33ZM300 33H300.5V32.5H300V33ZM300 75H299.5V75.5H300V75ZM336 75H336.5V74.5H336V75ZM336 140V140.5H336.5V140H336ZM300 140V139.5H299.5V140H300ZM300 183V183.5H300.5V183H300ZM299.983 183V182.5H299.513L299.484 182.969L299.983 183ZM35.0166 183L35.5157 182.969L35.4868 182.5H35.0166V183ZM35 183H34.5V183.5H35V183ZM35 140H35.5V139.5H35V140ZM0 140H-0.5V140.5H0V140ZM0 75V74.5H-0.5V75H0ZM35 75V75.5H35.5V75H35ZM35 33V32.5H34.5V33H35ZM35.0166 33V33.5H35.5483L35.5157 32.9693L35.0166 33ZM167.5 0V0.5C204.061 0.5 237.144 4.13537 261.073 10.0046C273.041 12.9402 282.691 16.428 289.337 20.2821C296.019 24.1571 299.5 28.3033 299.5 32.5H300H300.5C300.5 27.7221 296.566 23.3184 289.838 19.417C283.074 15.4946 273.32 11.9792 261.311 9.03342C237.284 3.14001 204.117 -0.5 167.5 -0.5V0ZM300 32.5H299.5C299.5 32.6544 299.494 32.8105 299.484 32.9693L299.983 33L300.482 33.0307C300.493 32.8567 300.5 32.6796 300.5 32.5H300ZM299.983 33V33.5H300V33V32.5H299.983V33ZM300 33H299.5V75H300H300.5V33H300ZM300 75V75.5H336V75V74.5H300V75ZM336 75H335.5V140H336H336.5V75H336ZM336 140V139.5H300V140V140.5H336V140ZM300 140H299.5V183H300H300.5V140H300ZM300 183V182.5H299.983V183V183.5H300V183ZM299.983 183L299.484 182.969C299.229 187.123 295.56 191.22 288.773 195.039C282.022 198.838 272.342 202.271 260.402 205.159C236.528 210.932 203.721 214.5 167.5 214.5V215V215.5C203.776 215.5 236.666 211.927 260.637 206.13C272.619 203.233 282.399 199.773 289.263 195.911C296.092 192.069 300.193 187.736 300.482 183.031L299.983 183ZM167.5 215V214.5C131.279 214.5 98.4722 210.932 74.5981 205.159C62.6575 202.271 52.9777 198.838 46.2271 195.039C39.4403 191.22 35.7711 187.123 35.5157 182.969L35.0166 183L34.5175 183.031C34.8069 187.736 38.9084 192.069 45.7367 195.911C52.6013 199.773 62.3811 203.233 74.363 206.13C98.334 211.927 131.224 215.5 167.5 215.5V215ZM35.0166 183V182.5H35V183V183.5H35.0166V183ZM35 183H35.5V140H35H34.5V183H35ZM35 140V139.5H0V140V140.5H35V140ZM0 140H0.5V75H0H-0.5V140H0ZM0 75V75.5H35V75V74.5H0V75ZM35 75H35.5V33H35H34.5V75H35ZM35 33V33.5H35.0166V33V32.5H35V33ZM35.0166 33L35.5157 32.9693C35.5059 32.8105 35.5 32.6544 35.5 32.5H35H34.5C34.5 32.6796 34.5068 32.8567 34.5175 33.0307L35.0166 33ZM35 32.5H35.5C35.5 28.3033 38.9812 24.1571 45.6633 20.2821C52.3092 16.428 61.9593 12.9402 73.9275 10.0046C97.856 4.13537 130.939 0.5 167.5 0.5V0V-0.5C130.883 -0.5 97.7163 3.14001 73.6892 9.03342C61.6796 11.9792 51.9255 15.4946 45.1617 19.417C38.4341 23.3184 34.5 27.7221 34.5 32.5H35Z" fill="black" mask="url(#path-218-outside-1_1_2)"/>
+<path d="M299.983 33L299.484 32.9693L299.452 33.5H299.983V33ZM300 33H300.5V32.5H300V33ZM300 75H299.5V75.5H300V75ZM336 75H336.5V74.5H336V75ZM336 140V140.5H336.5V140H336ZM300 140V139.5H299.5V140H300ZM300 183V183.5H300.5V183H300ZM299.983 183V182.5H299.513L299.484 182.969L299.983 183ZM35.0166 183L35.5157 182.969L35.4868 182.5H35.0166V183ZM35 183H34.5V183.5H35V183ZM35 140H35.5V139.5H35V140ZM0 140H-0.5V140.5H0V140ZM0 75V74.5H-0.5V75H0ZM35 75V75.5H35.5V75H35ZM35 33V32.5H34.5V33H35ZM35.0166 33V33.5H35.5483L35.5157 32.9693L35.0166 33ZM167.5 0V0.5C204.061 0.5 237.144 4.13537 261.073 10.0046C273.041 12.9402 282.691 16.428 289.337 20.2821C296.019 24.1571 299.5 28.3033 299.5 32.5H300H300.5C300.5 27.7221 296.566 23.3184 289.838 19.417C283.074 15.4946 273.32 11.9792 261.311 9.03342C237.284 3.14001 204.117 -0.5 167.5 -0.5V0ZM300 32.5H299.5C299.5 32.6544 299.494 32.8105 299.484 32.9693L299.983 33L300.482 33.0307C300.493 32.8567 300.5 32.6796 300.5 32.5H300ZM299.983 33V33.5H300V33V32.5H299.983V33ZM300 33H299.5V75H300H300.5V33H300ZM300 75V75.5H336V75V74.5H300V75ZM336 75H335.5V140H336H336.5V75H336ZM336 140V139.5H300V140V140.5H336V140ZM300 140H299.5V183H300H300.5V140H300ZM300 183V182.5H299.983V183V183.5H300V183ZM299.983 183L299.484 182.969C299.229 187.123 295.56 191.22 288.773 195.039C282.022 198.838 272.342 202.271 260.402 205.159C236.528 210.932 203.721 214.5 167.5 214.5V215V215.5C203.776 215.5 236.666 211.927 260.637 206.13C272.619 203.233 282.399 199.773 289.263 195.911C296.092 192.069 300.193 187.736 300.482 183.031L299.983 183ZM167.5 215V214.5C131.279 214.5 98.4722 210.932 74.5981 205.159C62.6575 202.271 52.9777 198.838 46.2271 195.039C39.4403 191.22 35.7711 187.123 35.5157 182.969L35.0166 183L34.5175 183.031C34.8069 187.736 38.9084 192.069 45.7367 195.911C52.6013 199.773 62.3811 203.233 74.363 206.13C98.334 211.927 131.224 215.5 167.5 215.5V215ZM35.0166 183V182.5H35V183V183.5H35.0166V183ZM35 183H35.5V140H35H34.5V183H35ZM35 140V139.5H0V140V140.5H35V140ZM0 140H0.5V75H0H-0.5V140H0ZM0 75V75.5H35V75V74.5H0V75ZM35 75H35.5V33H35H34.5V75H35ZM35 33V33.5H35.0166V33V32.5H35V33ZM35.0166 33L35.5157 32.9693C35.5059 32.8105 35.5 32.6544 35.5 32.5H35H34.5C34.5 32.6796 34.5068 32.8567 34.5175 33.0307L35.0166 33ZM35 32.5H35.5C35.5 28.3033 38.9812 24.1571 45.6633 20.2821C52.3092 16.428 61.9593 12.9402 73.9275 10.0046C97.856 4.13537 130.939 0.5 167.5 0.5V0V-0.5C130.883 -0.5 97.7163 3.14001 73.6892 9.03342C61.6796 11.9792 51.9255 15.4946 45.1617 19.417C38.4341 23.3184 34.5 27.7221 34.5 32.5H35Z" fill="black" mask="url(#path-218-outside-1_2028_1030)"/>
 </g>
 <rect id="Jembatan" transform="translate(0 109)" x="0.5" y="0.5" width="449" height="54" fill="#FFBB00" stroke="black"/>
 <g id="Pelindung" transform="translate(51 128)">
-<mask id="path-221-outside-2_1_2" maskUnits="userSpaceOnUse" x="-1" y="-1" width="350" height="623" fill="black">
+<mask id="path-221-outside-2_2028_1030" maskUnits="userSpaceOnUse" x="-1" y="-1" width="350" height="623" fill="black">
 <rect fill="white" x="-1" y="-1" width="350" height="623"/>
 <path d="M174 0C270.097 0 347.999 18.6134 348 41.5742C348 41.7203 347.995 41.866 347.988 42.0117H348V539.155L347.09 540.318C308.357 589.449 245.26 621.429 174 621.429C102.741 621.429 39.6441 589.449 0.911133 540.318L0 539.155V42.0117H0.0117188C0.00543085 41.866 0 41.7203 0 41.5742C0.000509077 18.6134 77.9028 1.18254e-05 174 0ZM174 5C81.2165 5.00001 6.00049 22.9716 6 45.1406C6 45.2818 6.00466 45.4227 6.01074 45.5635H6V525.563C43.3175 573.635 104.656 605 174 605C243.344 605 304.682 573.635 342 525.563V45.5635H341.989C341.995 45.4227 342 45.2818 342 45.1406C342 22.9715 266.784 5 174 5Z"/>
 </mask>
 <path d="M174 0C270.097 0 347.999 18.6134 348 41.5742C348 41.7203 347.995 41.866 347.988 42.0117H348V539.155L347.09 540.318C308.357 589.449 245.26 621.429 174 621.429C102.741 621.429 39.6441 589.449 0.911133 540.318L0 539.155V42.0117H0.0117188C0.00543085 41.866 0 41.7203 0 41.5742C0.000509077 18.6134 77.9028 1.18254e-05 174 0ZM174 5C81.2165 5.00001 6.00049 22.9716 6 45.1406C6 45.2818 6.00466 45.4227 6.01074 45.5635H6V525.563C43.3175 573.635 104.656 605 174 605C243.344 605 304.682 573.635 342 525.563V45.5635H341.989C341.995 45.4227 342 45.2818 342 45.1406C342 22.9715 266.784 5 174 5Z" id="Pelindung_bg_0" fill="#1100FF" fill-opacity="0.69">
 </path>
-<path d="M174 0V-0.5V-0.5V0ZM348 41.5742H348.5V41.5742L348 41.5742ZM347.988 42.0117L347.489 41.9902L347.466 42.5117H347.988V42.0117ZM348 42.0117H348.5V41.5117H348V42.0117ZM348 539.155L348.394 539.463L348.5 539.328V539.155H348ZM347.09 540.318L347.483 540.628L347.484 540.627L347.09 540.318ZM174 621.429V621.929V621.929V621.429ZM0.911133 540.318L0.517525 540.627L0.51848 540.628L0.911133 540.318ZM0 539.155H-0.5V539.328L-0.393606 539.464L0 539.155ZM0 42.0117V41.5117H-0.5V42.0117H0ZM0.0117188 42.0117V42.5117H0.533764L0.511254 41.9902L0.0117188 42.0117ZM0 41.5742L-0.5 41.5742V41.5742H0ZM174 5V4.5V4.5V5ZM6 45.1406L5.5 45.1406V45.1406H6ZM6.01074 45.5635V46.0635H6.53281L6.51028 45.5419L6.01074 45.5635ZM6 45.5635V45.0635H5.5V45.5635H6ZM6 525.563H5.5V525.735L5.60504 525.87L6 525.563ZM174 605V605.5V605.5V605ZM342 525.563L342.395 525.87L342.5 525.735V525.563H342ZM342 45.5635H342.5V45.0635H342V45.5635ZM341.989 45.5635L341.49 45.5419L341.467 46.0635H341.989V45.5635ZM342 45.1406H342.5V45.1406L342 45.1406ZM174 0V0.5C222.021 0.5 265.48 5.15115 296.92 12.6631C312.644 16.42 325.333 20.8861 334.08 25.827C342.867 30.7906 347.5 36.1311 347.5 41.5742L348 41.5742L348.5 41.5742C348.5 35.5369 343.395 29.9404 334.572 24.9563C325.709 19.9495 312.916 15.457 297.152 11.6905C265.617 4.15554 222.076 -0.5 174 -0.5V0ZM348 41.5742H347.5C347.5 41.7088 347.495 41.8455 347.489 41.9902L347.988 42.0117L348.488 42.0333C348.494 41.8866 348.5 41.7317 348.5 41.5742H348ZM347.988 42.0117V42.5117H348V42.0117V41.5117H347.988V42.0117ZM348 42.0117H347.5V539.155H348H348.5V42.0117H348ZM348 539.155L347.606 538.847L346.696 540.01L347.09 540.318L347.484 540.627L348.394 539.463L348 539.155ZM347.09 540.318L346.697 540.009C308.061 589.017 245.11 620.929 174 620.929V621.429V621.929C245.409 621.929 308.652 589.882 347.482 540.628L347.09 540.318ZM174 621.429V620.929C102.89 620.929 39.9396 589.016 1.30379 540.009L0.911133 540.318L0.51848 540.628C39.3486 589.882 102.591 621.929 174 621.929V621.429ZM0.911133 540.318L1.30474 540.01L0.393606 538.847L0 539.155L-0.393606 539.464L0.517527 540.627L0.911133 540.318ZM0 539.155H0.5V42.0117H0H-0.5V539.155H0ZM0 42.0117V42.5117H0.0117188V42.0117V41.5117H0V42.0117ZM0.0117188 42.0117L0.511254 41.9902C0.50501 41.8455 0.5 41.7088 0.5 41.5742H0H-0.5C-0.5 41.7317 -0.494148 41.8866 -0.487816 42.0333L0.0117188 42.0117ZM0 41.5742L0.5 41.5742C0.500121 36.1311 5.13317 30.7906 13.92 25.827C22.6665 20.8861 35.3561 16.42 51.0799 12.6631C82.5196 5.15116 125.979 0.500006 174 0.5V0V-0.5C125.924 -0.499994 82.3834 4.15555 50.8475 11.6905C35.0835 15.457 22.2914 19.9495 13.4281 24.9563C4.60506 29.9404 -0.499866 35.5369 -0.5 41.5742L0 41.5742ZM174 5V4.5C127.581 4.50001 85.5403 8.99509 55.0902 16.2706C39.8691 19.9074 27.5163 24.2454 18.9566 29.0807C10.4372 33.8933 5.50013 39.3013 5.5 45.1406L6 45.1406L6.5 45.1406C6.50012 39.8955 10.9653 34.7435 19.4484 29.9514C27.8914 25.182 40.1417 20.8704 55.3226 17.2432C85.6764 9.9907 127.635 5.50001 174 5.5V5ZM6 45.1406H5.5C5.5 45.2923 5.505 45.4414 5.51121 45.5851L6.01074 45.5635L6.51028 45.5419C6.50432 45.404 6.5 45.2713 6.5 45.1406H6ZM6.01074 45.5635V45.0635H6V45.5635V46.0635H6.01074V45.5635ZM6 45.5635H5.5V525.563H6H6.5V45.5635H6ZM6 525.563L5.60504 525.87C43.0196 574.067 104.506 605.5 174 605.5V605V604.5C104.807 604.5 43.6153 573.204 6.39496 525.257L6 525.563ZM174 605V605.5C243.494 605.5 304.98 574.067 342.395 525.87L342 525.563L341.605 525.257C304.385 573.204 243.193 604.5 174 604.5V605ZM342 525.563H342.5V45.5635H342H341.5V525.563H342ZM342 45.5635V45.0635H341.989V45.5635V46.0635H342V45.5635ZM341.989 45.5635L342.489 45.5851C342.495 45.4414 342.5 45.2923 342.5 45.1406H342H341.5C341.5 45.2713 341.496 45.404 341.49 45.5419L341.989 45.5635ZM342 45.1406L342.5 45.1406C342.5 39.3013 337.563 33.8933 329.043 29.0807C320.484 24.2454 308.131 19.9074 292.91 16.2706C262.46 8.99508 220.419 4.5 174 4.5V5V5.5C220.365 5.5 262.324 9.99069 292.677 17.2432C307.858 20.8704 320.109 25.182 328.552 29.9514C337.035 34.7435 341.5 39.8955 341.5 45.1406L342 45.1406Z" fill="black" mask="url(#path-221-outside-2_1_2)"/>
+<path d="M174 0V-0.5V-0.5V0ZM348 41.5742H348.5V41.5742L348 41.5742ZM347.988 42.0117L347.489 41.9902L347.466 42.5117H347.988V42.0117ZM348 42.0117H348.5V41.5117H348V42.0117ZM348 539.155L348.394 539.463L348.5 539.328V539.155H348ZM347.09 540.318L347.483 540.628L347.484 540.627L347.09 540.318ZM174 621.429V621.929V621.929V621.429ZM0.911133 540.318L0.517525 540.627L0.51848 540.628L0.911133 540.318ZM0 539.155H-0.5V539.328L-0.393606 539.464L0 539.155ZM0 42.0117V41.5117H-0.5V42.0117H0ZM0.0117188 42.0117V42.5117H0.533764L0.511254 41.9902L0.0117188 42.0117ZM0 41.5742L-0.5 41.5742V41.5742H0ZM174 5V4.5V4.5V5ZM6 45.1406L5.5 45.1406V45.1406H6ZM6.01074 45.5635V46.0635H6.53281L6.51028 45.5419L6.01074 45.5635ZM6 45.5635V45.0635H5.5V45.5635H6ZM6 525.563H5.5V525.735L5.60504 525.87L6 525.563ZM174 605V605.5V605.5V605ZM342 525.563L342.395 525.87L342.5 525.735V525.563H342ZM342 45.5635H342.5V45.0635H342V45.5635ZM341.989 45.5635L341.49 45.5419L341.467 46.0635H341.989V45.5635ZM342 45.1406H342.5V45.1406L342 45.1406ZM174 0V0.5C222.021 0.5 265.48 5.15115 296.92 12.6631C312.644 16.42 325.333 20.8861 334.08 25.827C342.867 30.7906 347.5 36.1311 347.5 41.5742L348 41.5742L348.5 41.5742C348.5 35.5369 343.395 29.9404 334.572 24.9563C325.709 19.9495 312.916 15.457 297.152 11.6905C265.617 4.15554 222.076 -0.5 174 -0.5V0ZM348 41.5742H347.5C347.5 41.7088 347.495 41.8455 347.489 41.9902L347.988 42.0117L348.488 42.0333C348.494 41.8866 348.5 41.7317 348.5 41.5742H348ZM347.988 42.0117V42.5117H348V42.0117V41.5117H347.988V42.0117ZM348 42.0117H347.5V539.155H348H348.5V42.0117H348ZM348 539.155L347.606 538.847L346.696 540.01L347.09 540.318L347.484 540.627L348.394 539.463L348 539.155ZM347.09 540.318L346.697 540.009C308.061 589.017 245.11 620.929 174 620.929V621.429V621.929C245.409 621.929 308.652 589.882 347.482 540.628L347.09 540.318ZM174 621.429V620.929C102.89 620.929 39.9396 589.016 1.30379 540.009L0.911133 540.318L0.51848 540.628C39.3486 589.882 102.591 621.929 174 621.929V621.429ZM0.911133 540.318L1.30474 540.01L0.393606 538.847L0 539.155L-0.393606 539.464L0.517527 540.627L0.911133 540.318ZM0 539.155H0.5V42.0117H0H-0.5V539.155H0ZM0 42.0117V42.5117H0.0117188V42.0117V41.5117H0V42.0117ZM0.0117188 42.0117L0.511254 41.9902C0.50501 41.8455 0.5 41.7088 0.5 41.5742H0H-0.5C-0.5 41.7317 -0.494148 41.8866 -0.487816 42.0333L0.0117188 42.0117ZM0 41.5742L0.5 41.5742C0.500121 36.1311 5.13317 30.7906 13.92 25.827C22.6665 20.8861 35.3561 16.42 51.0799 12.6631C82.5196 5.15116 125.979 0.500006 174 0.5V0V-0.5C125.924 -0.499994 82.3834 4.15555 50.8475 11.6905C35.0835 15.457 22.2914 19.9495 13.4281 24.9563C4.60506 29.9404 -0.499866 35.5369 -0.5 41.5742L0 41.5742ZM174 5V4.5C127.581 4.50001 85.5403 8.99509 55.0902 16.2706C39.8691 19.9074 27.5163 24.2454 18.9566 29.0807C10.4372 33.8933 5.50013 39.3013 5.5 45.1406L6 45.1406L6.5 45.1406C6.50012 39.8955 10.9653 34.7435 19.4484 29.9514C27.8914 25.182 40.1417 20.8704 55.3226 17.2432C85.6764 9.9907 127.635 5.50001 174 5.5V5ZM6 45.1406H5.5C5.5 45.2923 5.505 45.4414 5.51121 45.5851L6.01074 45.5635L6.51028 45.5419C6.50432 45.404 6.5 45.2713 6.5 45.1406H6ZM6.01074 45.5635V45.0635H6V45.5635V46.0635H6.01074V45.5635ZM6 45.5635H5.5V525.563H6H6.5V45.5635H6ZM6 525.563L5.60504 525.87C43.0196 574.067 104.506 605.5 174 605.5V605V604.5C104.807 604.5 43.6153 573.204 6.39496 525.257L6 525.563ZM174 605V605.5C243.494 605.5 304.98 574.067 342.395 525.87L342 525.563L341.605 525.257C304.385 573.204 243.193 604.5 174 604.5V605ZM342 525.563H342.5V45.5635H342H341.5V525.563H342ZM342 45.5635V45.0635H341.989V45.5635V46.0635H342V45.5635ZM341.989 45.5635L342.489 45.5851C342.495 45.4414 342.5 45.2923 342.5 45.1406H342H341.5C341.5 45.2713 341.496 45.404 341.49 45.5419L341.989 45.5635ZM342 45.1406L342.5 45.1406C342.5 39.3013 337.563 33.8933 329.043 29.0807C320.484 24.2454 308.131 19.9074 292.91 16.2706C262.46 8.99508 220.419 4.5 174 4.5V5V5.5C220.365 5.5 262.324 9.99069 292.677 17.2432C307.858 20.8704 320.109 25.182 328.552 29.9514C337.035 34.7435 341.5 39.8955 341.5 45.1406L342 45.1406Z" fill="black" mask="url(#path-221-outside-2_2028_1030)"/>
 </g>
 <g id="Regulate_Rod" transform="translate(280 30)">
 <rect id="Rectangle_7" transform="translate(20 79)" x="-0.25" y="-0.25" width="10.5" height="401.5" rx="1.25" fill="#686565" stroke="black" stroke-width="0.5"/>
@@ -1200,85 +1230,85 @@
 </g>
 </g>
 <defs>
-<clipPath id="clip0_1_2">
+<clipPath id="clip0_2028_1030">
 <rect width="1440" height="1024" fill="white"/>
 </clipPath>
-<clipPath id="clip1_1_2">
+<clipPath id="clip1_2028_1030">
 <rect width="249" height="191" fill="white"/>
 </clipPath>
-<clipPath id="clip2_1_2">
+<clipPath id="clip2_2028_1030">
 <rect width="249" height="191" fill="white"/>
 </clipPath>
-<clipPath id="clip3_1_2">
+<clipPath id="clip3_2028_1030">
 <rect width="63" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip4_1_2">
+<clipPath id="clip4_2028_1030">
 <rect width="90" height="90" fill="white"/>
 </clipPath>
-<clipPath id="clip5_1_2">
+<clipPath id="clip5_2028_1030">
 <rect width="114.034" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip6_1_2">
+<clipPath id="clip6_2028_1030">
 <rect width="126.143" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip7_1_2">
+<clipPath id="clip7_2028_1030">
 <rect width="80" height="46.4207" fill="white"/>
 </clipPath>
-<clipPath id="clip8_1_2">
+<clipPath id="clip8_2028_1030">
 <rect width="100" height="90.8232" fill="white"/>
 </clipPath>
-<clipPath id="clip9_1_2">
+<clipPath id="clip9_2028_1030">
 <rect width="174" height="46.4207" fill="white"/>
 </clipPath>
-<clipPath id="clip10_1_2">
+<clipPath id="clip10_2028_1030">
 <rect width="120" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip11_1_2">
+<clipPath id="clip11_2028_1030">
 <rect width="192" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip12_1_2">
+<clipPath id="clip12_2028_1030">
 <rect width="90" height="109" fill="white"/>
 </clipPath>
-<clipPath id="clip13_1_2">
+<clipPath id="clip13_2028_1030">
 <rect width="90" height="109" fill="white"/>
 </clipPath>
-<clipPath id="clip14_1_2">
+<clipPath id="clip14_2028_1030">
 <rect width="121" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip15_1_2">
+<clipPath id="clip15_2028_1030">
 <rect width="120" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip16_1_2">
+<clipPath id="clip16_2028_1030">
 <rect width="192" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip17_1_2">
+<clipPath id="clip17_2028_1030">
 <rect width="90" height="109" fill="white"/>
 </clipPath>
-<clipPath id="clip18_1_2">
+<clipPath id="clip18_2028_1030">
 <rect width="90" height="109" fill="white"/>
 </clipPath>
-<clipPath id="clip19_1_2">
+<clipPath id="clip19_2028_1030">
 <rect width="121" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip20_1_2">
+<clipPath id="clip20_2028_1030">
 <rect width="97" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip21_1_2">
+<clipPath id="clip21_2028_1030">
 <rect width="90" height="90" fill="white"/>
 </clipPath>
-<clipPath id="clip22_1_2">
+<clipPath id="clip22_2028_1030">
 <rect width="120" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip23_1_2">
+<clipPath id="clip23_2028_1030">
 <rect width="120" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip24_1_2">
+<clipPath id="clip24_2028_1030">
 <rect width="114" height="46" fill="white"/>
 </clipPath>
-<clipPath id="clip25_1_2">
+<clipPath id="clip25_2028_1030">
 <rect width="100" height="90" fill="white"/>
 </clipPath>
-<clipPath id="clip26_1_2">
+<clipPath id="clip26_2028_1030">
 <rect width="121" height="46" fill="white"/>
 </clipPath>
 </defs>
