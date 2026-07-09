@@ -7,7 +7,7 @@
 
 **SIRAKA** (Simulator Reaktor Kartini) adalah sebuah platform simulasi berbasis web yang dirancang untuk memvisualisasikan dan memahami prinsip kerja serta parameter operasional Reaktor Kartini. Proyek ini dikembangkan sebagai sarana pembelajaran interaktif bagi mahasiswa di lingkungan **Politeknik Nuklir** (POLTEK NUKLIR).
 
-🔗 **Demo Langsung**: [siraka.netlify.app](https://siraka-polteknuklir.site/)
+🔗 **Demo Langsung**: [siraka-polteknuklir.site](https://siraka-polteknuklir.site/)
 
 ---
 
