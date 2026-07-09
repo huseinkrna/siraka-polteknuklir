@@ -1,94 +1,133 @@
-# ⚛️ SIRAKA - Simulator Reaktor Kartini
+# ⚛️ SIRAKA – Simulator Reaktor Kartini
 
-![Status Proyek](https://img.shields.io/badge/status-pengembangan-yellow)
-![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react)
-![Vite](https://img.shields.io/badge/Vite-4.0.0-646CFF?logo=vite)
-![Lisensi](https://img.shields.io/badge/lisensi-belum_ditentukan-lightgrey)
+**SIRAKA** (Simulator Reaktor Kartini) adalah aplikasi web interaktif untuk mempelajari, memvisualisasikan, dan mensimulasikan operasi **Reaktor Kartini** – reaktor riset TRIGA Mark II yang dikelola oleh BRIN Yogyakarta.
 
-**SIRAKA** (Simulator Reaktor Kartini) adalah sebuah platform simulasi berbasis web yang dirancang untuk memvisualisasikan dan memahami prinsip kerja serta parameter operasional Reaktor Kartini. Proyek ini dikembangkan sebagai sarana pembelajaran interaktif bagi mahasiswa di lingkungan **Politeknik Nuklir** (POLTEK NUKLIR).
+Aplikasi ini menggabungkan simulasi fisika reaktor, visualisasi 3D, galeri sejarah, dan tur interaktif dalam satu platform edukatif.
 
-🔗 **Demo Langsung**: [siraka-polteknuklir.site](https://siraka-polteknuklir.site/)
+🔗 **Akses langsung:** [siraka-polteknuklir.site](https://siraka-polteknuklir.site)
 
 ---
 
-## 📋 Daftar Isi
+## 📌 Fitur Utama
 
-- [Tentang Proyek](#-tentang-proyek)
-- [Fitur Utama](#-fitur-utama)
-- [Teknologi yang Digunakan](#-teknologi-yang-digunakan)
-- [Memulai Proyek (Getting Started)](#-memulai-proyek-getting-started)
-- [Struktur Direktori](#-struktur-direktori)
-- [Kontribusi](#-kontribusi)
-- [Kontak Pengembang](#-kontak-pengembang)
-
----
-
-## 🧪 Tentang Proyek
-
-Reaktor Kartini merupakan salah satu reaktor nuklir riset yang berlokasi di Yogyakarta. Memahami dinamika operasional reaktor membutuhkan media visualisasi yang interaktif dan mudah dipahami.
-
-**SIRAKA** hadir untuk menjembatani hal tersebut dengan menyediakan:
-- Visualisasi kondisi terkini reaktor secara real-time (simulasi).
-- Pengendalian parameter dasar seperti posisi batang kendali.
-- Tampilan data numerik yang informatif (berupa daya, periode, enam titik PKE) yang disajikan dalam grafik.
-
-Dengan antarmuka yang modern dan responsif, SIRAKA cocok digunakan sebagai alat bantu praktikum maupun demonstrasi di kelas.
-
----
-
-## ✨ Fitur Utama
-
-- 🎮 **Simulasi Interaktif** – Pengguna dapat menjalankan skenario operasi reaktor secara virtual.
-- 📊 **Monitoring Parameter** – Menampilkan grafik dan indikator penting seperti suhu teras, level daya, dan fluks neutron.
-- 🎨 **UI/UX Modern** – Dibangun dengan komponen React yang dinamis dan tata letak yang nyaman dilihat.
-- ⚡ **Performa Cepat** – Menggunakan Vite untuk proses pengembangan dan build yang super cepat.
-- 📱 **Responsif** – Dapat diakses dengan baik melalui desktop, tablet, maupun ponsel.
+| Fitur | Deskripsi |
+|-------|-----------|
+| 🎮 **Simulator Interaktif** | Kontrol 3 batang kendali (Safe, Shim, Regulate) secara real-time menggunakan keyboard (SPACE + Q/W/E/A/S/D). Amati perubahan daya, reaktivitas, dan status reaktor. |
+| 📊 **Grafik Daya & Reaktivitas** | Grafik daya (Watt) terhadap waktu dan nilai reaktivitas (ρ) yang diperbarui setiap 50 ms. |
+| 🧊 **Tampilan 3D Reaktor** | Visualisasi 3D dari Core Reaktor dan Penampang Reaktor (cross-section) menggunakan Three.js. |
+| 📖 **Tur Sejarah** | Linimasa perjalanan Reaktor Kartini dari konstruksi hingga operasi saat ini, dilengkapi foto-foto arsip. |
+| 🖼️ **Galeri Foto** | Koleksi foto komponen dan fasilitas reaktor, dengan navigasi geser yang halus. |
+| 🌐 **Dukungan Multi-Bahasa** | Tersedia dalam Bahasa Indonesia dan Inggris (siap dikembangkan). |
 
 ---
 
 ## 🛠️ Teknologi yang Digunakan
 
-Proyek ini dibangun menggunakan teknologi-teknologi berikut:
-
-- **[React](https://react.dev/)** - Library UI untuk membangun antarmuka pengguna.
-- **[Vite](https://vitejs.dev/)** - Build tool modern yang cepat dan ringan.
-- **JavaScript (ES6+)** - Logika utama simulasi dan interaksi.
-- **CSS3** - Styling dan tata letak halaman (dengan pendekatan modular).
-- **Netlify** - Platform deployment untuk hosting demo publik.
+- **React 18** – UI library
+- **Vite** – Build tool super cepat
+- **Tailwind CSS** – Styling utility-first
+- **Three.js / @react-three/fiber** – Rendering 3D
+- **Chart.js** – Grafik interaktif
+- **React Router DOM** – Navigasi SPA
+- **GitHub Pages (opsional)** – Hosting statis
 
 ---
 
-## 🚀 Memulai Proyek (Getting Started)
-
-Ikuti langkah-langkah di bawah ini untuk menjalankan proyek ini di lingkungan lokal Anda.
+## 🚀 Cara Menjalankan di Lokal
 
 ### Prasyarat
+- Node.js (v20+)
+- npm atau yarn
 
-Pastikan Anda telah menginstal **Node.js** (versi 16 atau yang lebih baru) dan **npm** atau **yarn** di komputer Anda.
+### Langkah-langkah
 
-### Instalasi
+```bash
+# Clone repositori
+git clone https://github.com/huseinkrna/siraka-polteknuklir.git
+cd siraka-polteknuklir
 
-1. **Clone repositori**
-   ```bash
-   git clone https://github.com/huseinkrna/SIRAKA-POLTEK-NUKLIR.git
+# Install dependencies
+npm install
 
-2. **Masuk ke direktori proyek**
-    ```bash
-    cd SIRAKA-POLTEK-NUKLIR
+# Jalankan development server
+npm run dev
+Akses http://localhost:5173 di browser Anda.
 
-3. **Instal dependensi**
-    ```bash
-    npm install
+Build untuk produksi
+bash
+npm run build
+Hasil build ada di folder dist/ dan siap di-deploy ke layanan hosting statis (Vercel, Netlify, dll.).
 
-    atau jika menggunakan yarn:
-    ```bash
-    yarn install
+📁 Struktur Folder Penting
+text
+src/
+├── components/         # Komponen reusable (3D, grafik, timeline, dll.)
+├── data/               # Data statis (history, galeri, part names, dll.)
+├── hooks/              # Custom hooks (useReactorPhysics)
+├── pages/              # Halaman utama (Home, Simulator, Model3D, Gallery, HistoryTour)
+├── context/            # Context API (Language, dll.)
+├── assets/             # Gambar & aset statis
+public/
+├── assets/             # Gambar yang diakses publik (logo, foto, model 3D, dll.)
+├── models/             # File GLB untuk 3D
+└── ...
+🧪 Simulator – Panduan Singkat
+Tahan SPACE + Q → Naikkan Safe Rod (batang pengaman)
 
-3. **Jalankan server pengembangan**
-    ```bash
-    npm run dev
-atau    
-    ```bash
-    yarn dev
-    Buka di browser
-    Aplikasi akan berjalan di http://localhost:5173 (atau port lain yang tertera di terminal).
+Tahan SPACE + A → Turunkan Safe Rod
+
+Tahan SPACE + W → Naikkan Shim Rod (kompensasi)
+
+Tahan SPACE + S → Turunkan Shim Rod
+
+Tahan SPACE + E → Naikkan Regulating Rod (pengatur)
+
+Tahan SPACE + D → Turunkan Regulating Rod
+
+⚠️ Jika daya menembus 110 kW, sistem akan melakukan SCRAM otomatis dan semua batang akan jatuh ke posisi 0% setelah jeda 1,5 detik.
+
+📷 Cuplikan Layar
+Tambahkan screenshot di sini jika diperlukan.
+
+🤝 Kontribusi
+Kontribusi sangat terbuka! Silakan:
+
+Fork repositori
+
+Buat branch fitur (git checkout -b fitur-keren)
+
+Commit perubahan (git commit -m "Tambahkan fitur XYZ")
+
+Push ke branch (git push origin fitur-keren)
+
+Buat Pull Request
+
+📄 Lisensi
+Proyek ini dilisensikan di bawah MIT License – lihat file LICENSE untuk detail.
+
+🙏 Ucapan Terima Kasih
+Badan Riset dan Inovasi Nasional (BRIN) – atas izin dan dukungan data Reaktor Kartini.
+
+Politeknik Teknologi Nuklir Indonesia (Poltek Nuklir) – sebagai mitra edukasi.
+
+Tim Pengelola Reaktor Kartini – atas bimbingan teknis.
+
+Dibangun oleh tim SIRAKA
+GitHub Repository
+
+### 🧭 Instruksi Penggunaan
+
+1.  Buat file baru bernama `README.md` di root folder proyek Anda (sama level dengan `package.json`).
+2.  Salin semua konten di atas ke dalam file tersebut.
+3.  Simpan.
+4.  Jika ingin menambahkan screenshot, buat folder `screenshots/` dan tambahkan gambar, lalu sesuaikan path di bagian "Cuplikan Layar".
+5.  Commit dan push ke GitHub:
+
+```bash
+git add README.md
+git commit -m "Add README.md"
+git push origin main
+
+🔗 Tautan Live
+Domain: siraka-polteknuklir.site
+Repo GitHub: github.com/huseinkrna/siraka-polteknuklir

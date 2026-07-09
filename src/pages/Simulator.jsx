@@ -381,7 +381,7 @@ export default function Simulator() {
 </div>
 
 {/* 4. PERISAI RADIASI */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '6.7%', top: '38%' }}>
+<div className="absolute z-30 group hover:z-[100]" style={{ left: '30%', top: '38%' }}>
   <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-purple-400 cursor-help font-bold text-purple-300 hover:bg-purple-400/20 transition">🧱</span>
   <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-purple-400 p-3 rounded shadow-xl text-left z-50">
     <h3 className="text-purple-400 font-bold text-[0.7rem] mb-1">Perisai Radiasi (Biological Shielding)</h3>
