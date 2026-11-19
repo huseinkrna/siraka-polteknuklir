@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitur Simulator Reaktor Kartini</title>
+
+<style>
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+*.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+canvas {
+    touch-action: none;
+}
+</style>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body class="unselectable">
+    
+<div class="container">
+<div class="row">
+<h5>Fitur</h5>
+</div>
+<div class="row">
+    <div class="col-sm">
+		<img class="img-fluid" src="Panel Fitur info 1.png" width="600" style="margin-bottom:30px">
+    </div>
+<div class="col-sm">
+<ol type="1">
+<li><strong>Safe Rod (SCRAM):</strong> Batang pengaman B₄C yang menghentikan reaktor otomatis saat daya melebihi 110 kW.</li>
+<li><strong>Shim Rod (Kompensasi):</strong> Menyesuaikan reaktivitas akibat perubahan bahan bakar dan temperatur.</li>
+<li><strong>Regulating Rod (Pengatur):</strong> Mengatur daya reaktor secara halus hingga daya nominal 100 kW.</li>
+<li><strong>Rod Drive Mechanism:</strong> Mekanisme motor dan kopling magnetik penggerak batang kendali; memungkinkan batang jatuh saat SCRAM.</li>
+<li><strong>Jembatan Reaktor (Bridge):</strong> Penyangga penggerak batang kendali, sensor, dan akses penanganan bahan bakar.</li>
+<li><strong>Perisai Radiasi (Biological Shielding):</strong> Beton barit yang mengurangi paparan radiasi neutron dan gamma.</li>
+<li><strong>Kolam Reaktor &amp; Air Moderator:</strong> Kolam berisi air demineralisasi sebagai moderator, pendingin, dan perisai radiasi.</li>
+<li><strong>Teras Reaktor (Core):</strong> Tempat elemen bahan bakar, grafit, batang kendali, dan sumber neutron.</li>
+<li><strong>Pipa Pendingin Primer:</strong> Menyalurkan air pendingin dari kolam ke penukar panas (heat exchanger).</li>
+<li><strong>Pompa Sirkulasi:</strong> Mengalirkan pendingin sekunder melalui penukar panas untuk membuang panas reaktor.</li>
+</ol>
+</div>
+</div>
+<hr>
+<div class="row">
+<h5>Langkah-Langkah Penggunaan</h5>
+</div>
+<div class="row">
+    <div class="col-sm max550">
+        <img class="img-fluid" src="images/PanelInfo_Int1_id.png" width="600" style="margin-bottom:30px">
+        <img class="img-fluid" src="images/PanelInfo_Int2_id.png" width="600" style="margin-bottom:30px">
+        <img class="img-fluid" src="images/PanelInfo_Int3_id.png" width="600" style="margin-bottom:30px">
+        <img class="img-fluid" src="images/PanelInfo_Int4_id.png" width="600" style="margin-bottom:30px">
+        <img class="img-fluid" src="images/PanelInfo_Int5_id.png" width="600" style="margin-bottom:30px">
+    </div>
+    <div class="col-sm">
+        <ol type="1">
+            <li><strong>Safe Rod</strong> merupakan batang kendali yang digunakan untuk mengendalikan kondisi keselamatan reaktor. Safe Rod harus dinaikkan terlebih dahulu hingga posisi 100% sebelum batang kendali lainnya dapat dioperasikan.</li>
+            <ul>
+                <li><strong>Naik:</strong> Space + Q</li>
+                <li><strong>Turun:</strong> Space + A</li>
+            </ul>
+
+            <li><strong>Shim Rod</strong> merupakan batang kendali yang digunakan untuk mengatur reaktivitas dan kondisi daya reaktor.</li>
+            <ul>
+                <li><strong>Naik:</strong> Space + W</li>
+                <li><strong>Turun:</strong> Space + S</li>
+            </ul>
+
+            <li><strong>Regulating Rod</strong> Batang ini berfungsi untuk mengatur reaktivitas dan daya reaktor secara lebih halus. Perubahan posisi batang kendali akan memengaruhi indikator daya dan status reaktor.</li>
+            <ul>
+                <li><strong>Naik:</strong> Space + E</li>
+                <li><strong>Turun:</strong> Space + D</li>
+            </ul>
+
+            <li><strong>Protokol SCRAM:</strong> Jika daya menembus 110 kW (110.000 W), alarm akan aktif. Setelah jeda mekanis selama 1,5 detik, semua batang kendali akan dijatuhkan secara otomatis hingga batas 0% untuk menghentikan reaksi fisi secara paksa.</li>
+
+            <li><strong>Daya Aktual vs Waktu:</strong> Menunjukkan perubahan daya termal reaktor dalam satuan Watt (W) terhadap waktu secara real-time.</li>
+
+            <li><strong>Profil Reaktivitas:</strong> Reaktivitas (ρ) menunjukkan kondisi reaktor, apakah daya stabil, meningkat, atau menurun. Saat ρ = 0, reaktor berada dalam keadaan seimbang dan daya tetap stabil. Jika reaktivitas meningkat melebihi Beta Efektif (β), reaktor dapat memasuki kondisi <em>Prompt Critical</em>, yaitu saat daya meningkat sangat cepat sehingga sistem keselamatan harus segera menghentikan reaksi untuk menjaga keamanan.</li>
+
+            <li><strong>Konsentrasi Prekursor:</strong> Kelompok isotop hasil fisi yang menghasilkan neutron tunda. Neutron tunda berfungsi sebagai “rem alami” reaktor karena membantu memperlambat perubahan daya, sehingga reaktor dapat dikendalikan dengan aman.</li>
+        </ol>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
+

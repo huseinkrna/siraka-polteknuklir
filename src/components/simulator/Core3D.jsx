@@ -6,7 +6,7 @@ import * as THREE from 'three';
 
 // ---------- MODEL ----------
 function ReactorModel() {
-  const { scene } = useGLTF('/models/reactor-core.glb');
+  const { scene } = useGLTF('/models/Dipersatukan.glb');
   
   useEffect(() => {
     scene.scale.set(0.5, 0.5, 0.5);
@@ -52,7 +52,7 @@ export default function Core3D() {
     if (retryCount.current <= 2) {
       setRetryKey(prev => prev + 1);
       setHasError(false);
-      console.log(`🔄 Retry Core3D (${retryCount.current}/2)...`);
+      console.log('Retry Core3D (${retryCount.current}/2)...');
     } else {
       setHasError(true);
       console.error('❌ Core3D: WebGL context lost too many times.');
@@ -153,3 +153,4 @@ export default function Core3D() {
     </div>
   );
 }
+

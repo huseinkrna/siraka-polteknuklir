@@ -52,7 +52,7 @@ export default function CrossSection3D() {
     if (retryCount.current <= 2) {
       setRetryKey(prev => prev + 1);
       setHasError(false);
-      console.log(`🔄 Retry CrossSection3D (${retryCount.current}/2)...`);
+      console.log('Retry CrossSection3D (${retryCount.current}/2)...');
     } else {
       setHasError(true);
       console.error('❌ CrossSection3D: WebGL context lost too many times.');

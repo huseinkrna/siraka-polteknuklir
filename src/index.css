@@ -1,10 +1,10 @@
+/* Import font first before tailwind base */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
 /* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import font */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -62,4 +62,31 @@
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
   }
+}
+
+@keyframes greetingPopFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -24px) scale(0.88);
+    filter: blur(8px);
+  }
+  14% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+    filter: blur(0px);
+  }
+  75% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -18px) scale(1.04);
+    filter: blur(6px);
+  }
+}
+
+.animate-greeting-pop {
+  animation: greetingPopFade 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

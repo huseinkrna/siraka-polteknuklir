@@ -1,6 +1,6 @@
 // src/pages/Simulator.jsx
 import { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Line as ChartLine } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
@@ -36,15 +36,33 @@ const miniChartOptions = {
 
 // Import Komponen
 import FullChart from '../components/simulator/FullChart';
+import HelpContent from '../components/help/HelpContent';
 import { useReactorPhysics } from '../hooks/useReactorPhysics';
 
 export default function Simulator() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const [nickname] = useState(() => {
+    return (
+      location.state?.nickname ||
+      location.state?.username ||
+      localStorage.getItem('siraka_nickname') ||
+      sessionStorage.getItem('siraka_nickname') ||
+      ''
+    );
+  });
+
+  const displayName = nickname
+    ? nickname.charAt(0).toUpperCase() + nickname.slice(1)
+    : 'Operator';
+
   const [activePOV, setActivePOV] = useState('main');
   const [warning, setWarning] = useState('');
 
-  const [tutorialStep, setTutorialStep] = useState(1);
+  const [tutorialStep, setTutorialStep] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
 
   const { stepSimulation } = useReactorPhysics();
 
@@ -181,7 +199,7 @@ export default function Simulator() {
   const statusReaktor = isTripUI ? 'SCRAM' : (simData.dayaWatt > 1.5 ? 'CRITICAL' : 'SHUTDOWN');
 
   return (
-    <div className="h-screen w-full bg-gray-950 flex flex-col font-sans text-white overflow-hidden p-0">
+    <div className="h-screen w-full bg-gray-950 flex flex-col font-sans text-white overflow-hidden p-0 select-none relative">
 
       {/* POP-UP TUTORIAL */}
       {tutorialStep > 0 && (
@@ -196,7 +214,7 @@ export default function Simulator() {
                   <p>Simulator Reaktor Kartini dikembangkan sebagai media pembelajaran dan visualisasi operasi Reaktor Kartini, yaitu reaktor riset tipe TRIGA Mark II berdaya 100 kW termal dengan 68 elemen bakar, tiga batang kendali (Safety Rod, Shim Rod, dan Regulating Rod), serta sistem pendingin air tipe open pool.</p>
                   <p>Seluruh data yang ditampilkan merupakan hasil simulasi numerik dan bukan data operasi reaktor secara real-time. Perhitungan menggunakan Persamaan Kinetika Titik (PKE), enam kelompok neutron tunda, serta model umpan balik reaktivitas akibat perubahan temperatur bahan bakar dan densitas pendingin.</p>
                   <p>Simulator ini dikembangkan berdasarkan penelitian "Improvement of a Code-Based Kartini Reactor Simulator for Education and Training" dan ditujukan untuk mendukung kegiatan pendidikan, pelatihan, serta pemahaman prinsip operasi dan keselamatan reaktor nuklir.</p>
-                  <p><strong>Catatan :</strong> Simulator masih dalam tahap pengembangan. Hasil simulasi merupakan pendekatan matematis dan dapat berbeda dari kondisi operasi Reaktor Kartini yang sebenarnya.</p>
+                  <p><strong>Catatan:</strong> Simulator masih dalam tahap pengembangan. Hasil simulasi merupakan pendekatan matematis dan dapat berbeda dari kondisi operasi Reaktor Kartini yang sebenarnya.</p>
                 </>
               ) : (
                 <>
@@ -229,23 +247,103 @@ export default function Simulator() {
         </div>
       )}
 
+      {/* POP-UP PANEL HELP / BANTUAN (DARI TOMBOL BUKU KECIL) */}
+      {showHelpModal && (
+        <div 
+          className="fixed inset-0 z-[110] bg-black/85 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 md:p-6"
+          onClick={() => setShowHelpModal(false)}
+        >
+          <div 
+            className="bg-[#0b0f19] border border-cyan-500/50 rounded-2xl w-full max-w-6xl xl:max-w-7xl w-[96vw] max-h-[94vh] flex flex-col shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header Modal */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-800 bg-[#0f172a] flex-shrink-0">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📖</span>
+                <div>
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold font-poppins text-cyan-400">
+                    Pusat Bantuan &amp; Panduan Simulator SIRAKA
+                  </h2>
+                  <p className="text-xs sm:text-sm text-gray-400">
+                    Dokumentasi resmi fitur dan langkah-langkah penggunaan Simulator Reaktor Kartini
+                  </p>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowHelpModal(false)}
+                className="w-8 h-8 rounded-full bg-red-600/80 hover:bg-red-600 text-white flex items-center justify-center font-bold text-sm transition cursor-pointer"
+                title="Tutup Panel Bantuan"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Konten Scrollable */}
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 bg-[#08091C]/95">
+              <HelpContent />
+            </div>
+
+            {/* Footer Modal */}
+            <div className="px-6 py-3 border-t border-gray-800 bg-[#0f172a] flex justify-between items-center flex-shrink-0 text-xs text-gray-400">
+              <span>Satu sumber data terintegrasi dengan halaman Help utama.</span>
+              <button
+                onClick={() => setShowHelpModal(false)}
+                className="px-5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition shadow cursor-pointer"
+              >
+                Tutup
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* HEADER */}
       <div className="h-12 bg-gray-900 border-b border-gray-700 flex items-center px-4 justify-between flex-shrink-0">
         <h1 className="text-lg font-bold text-blue-400">Simulator Reaktor Kartini</h1>
-        <button onClick={() => navigate('/')} className="px-3 py-1.5 bg-red-600 hover:bg-red-700 rounded text-xs font-semibold">Beranda</button>
+        <div className="flex items-center gap-2">
+          <button 
+            onClick={() => setShowHelpModal(true)} 
+            className="px-3 py-1.5 bg-cyan-900/80 hover:bg-cyan-800 border border-cyan-600/60 rounded text-xs font-semibold text-cyan-200 transition flex items-center gap-1 cursor-pointer"
+            title="Buka Pusat Bantuan"
+          >
+            <span>📖</span>
+            <span className="hidden sm:inline">Bantuan</span>
+          </button>
+          <button 
+            onClick={() => navigate('/model3d')} 
+            className="px-3 py-1.5 bg-purple-900/80 hover:bg-purple-800 border border-purple-600/60 rounded text-xs font-semibold text-purple-200 transition cursor-pointer"
+          >
+            Model 3D
+          </button>
+          <button 
+            onClick={() => navigate('/')} 
+            className="px-3 py-1.5 bg-red-600 hover:bg-red-700 rounded text-xs font-semibold cursor-pointer transition"
+          >
+            Beranda
+          </button>
+        </div>
       </div>
 
+      {/* AREA UTAMA (UKURAN DAN PROPORSI ASLI SESUAI VERSI AWAL) */}
       <div className="flex-1 grid grid-cols-12 gap-1 p-1 overflow-hidden">
 
         {/* KOLOM KIRI (Visual Simulator) */}
         <div className="col-span-8 bg-black relative flex items-center justify-center border border-gray-800 rounded">
 
-          {/* TOMBOL BUKU PANDUAN */}
+          {/* TULISAN HELLO PERMANEN DI KIRI, TEPAT DI BAWAH TULISAN SIMULATOR REAKTOR KARTINI */}
+          <div className="absolute top-1 sm:top-1.5 left-3 z-30 pointer-events-none select-none text-left">
+            <span className="font-serif font-normal text-base sm:text-lg md:text-[1.15rem] text-white tracking-normal leading-none drop-shadow-sm inline-block">
+              Hello, {displayName}
+            </span>
+          </div>
+
+          {/* TOMBOL BUKU PANDUAN KIRI BAWAH */}
           <div className="absolute bottom-4 left-4 z-40">
             <button
-              onClick={() => setTutorialStep(1)}
-              className="flex items-center justify-center bg-blue-900/80 hover:bg-blue-700 text-blue-100 p-2 rounded-full border border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all group backdrop-blur-sm"
-              title="Buka Buku Panduan"
+              onClick={() => setShowHelpModal(true)}
+              className="flex items-center justify-center bg-blue-900/80 hover:bg-blue-700 text-blue-100 p-2 rounded-full border border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all group backdrop-blur-sm cursor-pointer"
+              title="Buka Buku Panduan / Help"
             >
               <span className="text-lg">📖</span>
               <span className="w-0 overflow-hidden group-hover:w-20 group-hover:ml-2 text-[0.6rem] font-bold text-left transition-all duration-300 whitespace-nowrap">
@@ -255,12 +353,12 @@ export default function Simulator() {
           </div>
 
           {activePOV === 'main' && (
-            <div className="relative w-full max-w-4xl">
+            <div className="relative w-full max-w-5xl xl:max-w-6xl max-h-[92vh] flex items-center justify-center">
               {/* Background SVG Reaktor */}
               <img 
                 src="/assets/images/reaktor-bg.svg" 
                 alt="Reaktor 2D" 
-                className="w-full opacity-90" 
+                className="w-full h-auto max-h-[90vh] object-contain opacity-95 select-none pointer-events-none" 
               />
               
               {/* ============================================================
@@ -332,104 +430,88 @@ export default function Simulator() {
               </div>
 
               {/* ============================================================
-                  🎯 HOTSPOT INTERAKTIF (8 TITIK)
+                  🎯 HOTSPOT INTERAKTIF (HANYA NAMA KOMPONEN, TANPA DESKRIPSI PANJANG)
                   ============================================================ */}
 
               {/* 1. ROD DRIVE MECHANISM */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '18.3%', top: '27%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-yellow-400 cursor-help font-bold text-yellow-300 hover:bg-yellow-400/20 transition">⛰️</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-yellow-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-yellow-400 font-bold text-[0.7rem] mb-1">Rod Drive Mechanism</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Motor stepper &amp; magnetic clutch yang menggerakkan batang kendali. Pada kondisi SCRAM, arus listrik diputus sehingga batang jatuh bebas ke dalam teras dalam waktu &lt; 0.6 detik.</p>
-  </div>
-</div>
+              <div className="absolute z-30 group hover:z-[100]" style={{ left: '18.3%', top: '27%' }}>
+                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-yellow-400 cursor-help font-bold text-yellow-300 hover:bg-yellow-400/20 transition">⛰️</span>
+                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-yellow-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
+                  <h3 className="text-yellow-400 font-bold text-[0.7rem]">Rod Drive Mechanism</h3>
+                </div>
+              </div>
 
-{/* 2A. SAFE ROD */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '13%', top: '14%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-red-400 cursor-help font-bold text-red-300 hover:bg-red-400/20 transition">🛡️</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-red-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-red-400 font-bold text-[0.7rem] mb-1">Safe Rod (SCRAM)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Batang pengaman (Safety Rod) dengan material penyerap neutron B₄C. Berfungsi sebagai sistem shutdown utama. Jika daya &gt; 110 kW, batang ini otomatis dijatuhkan (SCRAM) dalam 1.5 detik.</p>
-  </div>
-</div>
+              {/* 2A. SAFE ROD */}
+              <div className="absolute z-30 group hover:z-[100]" style={{ left: '13%', top: '14%' }}>
+                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-red-400 cursor-help font-bold text-red-300 hover:bg-red-400/20 transition">🛡️</span>
+                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-red-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
+                  <h3 className="text-red-400 font-bold text-[0.7rem]">Safe Rod (SCRAM)</h3>
+                </div>
+              </div>
 
-{/* 2B. SHIM ROD */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '18.3%', top: '14%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-yellow-400 cursor-help font-bold text-yellow-300 hover:bg-yellow-400/20 transition">⚙️</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-yellow-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-yellow-400 font-bold text-[0.7rem] mb-1">Shim Rod (Kompensasi)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Batang kompensasi digunakan untuk mengkompensasi perubahan reaktivitas akibat burn-up bahan bakar dan efek temperatur selama operasi jangka panjang.</p>
-  </div>
-</div>
+              {/* 2B. SHIM ROD */}
+              <div className="absolute z-30 group hover:z-[100]" style={{ left: '18.3%', top: '14%' }}>
+                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-yellow-400 cursor-help font-bold text-yellow-300 hover:bg-yellow-400/20 transition">⚙️</span>
+                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-yellow-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
+                  <h3 className="text-yellow-400 font-bold text-[0.7rem]">Shim Rod (Kompensasi)</h3>
+                </div>
+              </div>
 
-{/* 2C. REGULATING ROD */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '24%', top: '14%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-cyan-400 cursor-help font-bold text-cyan-300 hover:bg-cyan-400/20 transition">🎯</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-cyan-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-cyan-400 font-bold text-[0.7rem] mb-1">Regulating Rod (Pengatur)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Batang pengatur untuk kontrol daya secara halus. Digerakkan oleh motor stepper dengan kecepatan 0.63 cm/detik untuk mencapai daya operasi nominal 100 kW secara presisi.</p>
-  </div>
-</div>
+              {/* 2C. REGULATING ROD */}
+              <div className="absolute z-30 group hover:z-[100]" style={{ left: '24%', top: '14%' }}>
+                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-cyan-400 cursor-help font-bold text-cyan-300 hover:bg-cyan-400/20 transition">🎯</span>
+                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-cyan-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
+                  <h3 className="text-cyan-400 font-bold text-[0.7rem]">Regulating Rod (Pengatur)</h3>
+                </div>
+              </div>
 
-{/* 3. JEMBATAN REAKTOR */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '32.3%', top: '29%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-blue-400 cursor-help font-bold text-blue-300 hover:bg-blue-400/20 transition">🌉</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-blue-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-blue-400 font-bold text-[0.7rem] mb-1">Jembatan Reaktor (Bridge)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Struktur besi di atas kolam reaktor (panjang 251 cm, lebar 55 cm). Berfungsi sebagai platform untuk motor penggerak batang kendali, sensor suhu, dan akses loading/unloading bahan bakar.</p>
-  </div>
-</div>
+              {/* 3. JEMBATAN REAKTOR */}
+              <div className="absolute z-30 group hover:z-[100]" style={{ left: '32.3%', top: '29%' }}>
+                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-blue-400 cursor-help font-bold text-blue-300 hover:bg-blue-400/20 transition">🌉</span>
+                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-blue-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
+                  <h3 className="text-blue-400 font-bold text-[0.7rem]">Jembatan Reaktor (Bridge)</h3>
+                </div>
+              </div>
 
-{/* 4. PERISAI RADIASI */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '30%', top: '38%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-purple-400 cursor-help font-bold text-purple-300 hover:bg-purple-400/20 transition">🧱</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-purple-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-purple-400 font-bold text-[0.7rem] mb-1">Perisai Radiasi (Biological Shielding)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Beton barit dengan rapat massa 3,3 ton/m³, tinggi 6,5 m, tebal 2,5 m. Berfungsi menahan radiasi neutron &amp; gamma dari teras. Telah di-retrofit untuk menahan gempa zona 5 (0.25–0.3g).</p>
-  </div>
-</div>
+              {/* 4. PERISAI RADIASI */}
+              <div className="absolute z-30 group hover:z-[100]" style={{ left: '30%', top: '38%' }}>
+                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-purple-400 cursor-help font-bold text-purple-300 hover:bg-purple-400/20 transition">🧱</span>
+                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-purple-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
+                  <h3 className="text-purple-400 font-bold text-[0.7rem]">Perisai Radiasi (Biological Shielding)</h3>
+                </div>
+              </div>
 
-{/* 5. KOLAM REAKTOR + AIR MODERATOR */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '27%', top: '48.8%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-sky-400 cursor-help font-bold text-sky-300 hover:bg-sky-400/20 transition">💧</span>
-  <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900 border border-sky-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-sky-400 font-bold text-[0.7rem] mb-1">Kolam Reaktor &amp; Air Moderator</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Tangki aluminium diameter 198 cm, tinggi 655 cm, berisi air demineralisasi. Berfungsi sebagai moderator neutron, pendingin konveksi alam, dan perisai radiasi vertikal. Ketinggian air ~4,9 m di atas teras.</p>
-  </div>
-</div>
+              {/* 5. KOLAM REAKTOR + AIR MODERATOR */}
+              <div className="absolute z-30 group hover:z-[100]" style={{ left: '27%', top: '48.8%' }}>
+                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-sky-400 cursor-help font-bold text-sky-300 hover:bg-sky-400/20 transition">💧</span>
+                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-sky-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
+                  <h3 className="text-sky-400 font-bold text-[0.7rem]">Kolam Reaktor &amp; Air Moderator</h3>
+                </div>
+              </div>
 
-{/* 6. TERAS REAKTOR */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '18.4%', top: '82.8%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-orange-400 cursor-help font-bold text-orange-300 hover:bg-orange-400/20 transition">☢️</span>
-  <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-gray-900 border border-orange-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-orange-400 font-bold text-[0.7rem] mb-1">Teras Reaktor (Core)</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">
-      <strong>Isi:</strong> 71 elemen bakar (69 tipe 104, 2 tipe 204), 14 dummy grafit, 
-      3 batang kendali, dan 1 sumber neutron Am-Be. <br/>
-      <strong>Dimensi:</strong> Silinder radius 225 mm, tinggi 580 mm. <br/>
-      <strong>Bahan bakar:</strong> U-ZrH₁.₇ dengan 8.5% U-235 (pengayaan 20%). <br/>
-      <strong>Fluks neutron:</strong> 1.9 × 10¹² n/cm²·s (maks. termal).
-    </p>
-  </div>
-</div>
+              {/* 6. TERAS REAKTOR */}
+              <div className="absolute z-30 group hover:z-[100]" style={{ left: '18.4%', top: '82.8%' }}>
+                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-orange-400 cursor-help font-bold text-orange-300 hover:bg-orange-400/20 transition">☢️</span>
+                <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2.5 py-1 bg-gray-900 border border-orange-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
+                  <h3 className="text-orange-400 font-bold text-[0.7rem]">Teras Reaktor (Core)</h3>
+                </div>
+              </div>
 
-{/* 7. PIPA PENDINGIN */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '48.6%', top: '39.1%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-amber-400 cursor-help font-bold text-amber-300 hover:bg-amber-400/20 transition">🔁</span>
-  <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 bg-gray-900 border border-amber-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-amber-400 font-bold text-[0.7rem] mb-1">Pipa Pendingin Primer</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Sirkuit pendingin primer berbahan aluminium yang mengalirkan air dari kolam reaktor ke Heat Exchanger. Aliran konveksi alam (0.56 cm/s) sudah cukup untuk daya 100 kW. Dilengkapi lubang antisiphon untuk mencegah kebocoran tak terkendali.</p>
-  </div>
-</div>
+              {/* 7. PIPA PENDINGIN */}
+              <div className="absolute z-30 group hover:z-[100]" style={{ left: '48.6%', top: '39.1%' }}>
+                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-amber-400 cursor-help font-bold text-amber-300 hover:bg-amber-400/20 transition">🔁</span>
+                <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2.5 py-1 bg-gray-900 border border-amber-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
+                  <h3 className="text-amber-400 font-bold text-[0.7rem]">Pipa Pendingin Primer</h3>
+                </div>
+              </div>
 
-{/* 8. POMPA SIRKULASI */}
-<div className="absolute z-30 group hover:z-[100]" style={{ left: '60.1%', top: '39.8%' }}>
-  <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-emerald-400 cursor-help font-bold text-emerald-300 hover:bg-emerald-400/20 transition">🔄</span>
-  <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 bg-gray-900 border border-emerald-400 p-3 rounded shadow-xl text-left z-50">
-    <h3 className="text-emerald-400 font-bold text-[0.7rem] mb-1">Pompa Sirkulasi</h3>
-    <p className="text-[0.55rem] text-gray-300 leading-relaxed">Pompa sirkulasi yang mendorong air pendingin sekunder melalui Heat Exchanger (HE Tube). Pada mode konveksi alam (kalibrasi daya), pompa dimatikan dan pendinginan mengandalkan sirkulasi termal alami. Kapasitas pompa disesuaikan dengan laju pembuangan panas 100 kW.</p>
-  </div>
-</div>
+              {/* 8. POMPA SIRKULASI */}
+              <div className="absolute z-30 group hover:z-[100]" style={{ left: '60.1%', top: '39.8%' }}>
+                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-emerald-400 cursor-help font-bold text-emerald-300 hover:bg-emerald-400/20 transition">🔄</span>
+                <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2.5 py-1 bg-gray-900 border border-emerald-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
+                  <h3 className="text-emerald-400 font-bold text-[0.7rem]">Pompa Sirkulasi</h3>
+                </div>
+              </div>
 
             </div>
           )}

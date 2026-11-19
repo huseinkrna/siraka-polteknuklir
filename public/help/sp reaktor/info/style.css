@@ -1,0 +1,44 @@
+.max300 {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.max350 {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.max370 {
+  max-height: 370px;
+  overflow-y: auto;
+}
+
+.max400 {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.max450 {
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.max500 {
+  max-height: 500px;
+  overflow-y: auto;
+}
+.max550 {
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+.max750 {
+  max-height: 750px;
+  overflow-y: auto;
+}
+
+@media print {
+  .max750, .max550, .max500, .max450, .max400, .max350, .max370, .max300 {
+    max-height: none !important;
+  }
+}

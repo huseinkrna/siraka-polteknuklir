@@ -47,6 +47,7 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
         sans: ['Plus Jakarta Sans', 'sans-serif'],
         serif: ['Lora', 'serif'],
         mono: ['IBM Plex Mono', 'monospace'],

@@ -5,6 +5,7 @@ import HistoryTour from './pages/HistoryTour';
 import Simulator from './pages/Simulator';
 import Gallery from './pages/Gallery';
 import Model3D from './pages/Model3D';
+import Help from './pages/Help';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/simulator" element={<Simulator />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/model3d" element={<Model3D />} />
+          <Route path="/help" element={<Help />} />
         </Routes>
       </Router>
     </LanguageProvider>
