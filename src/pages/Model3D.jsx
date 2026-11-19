@@ -4,12 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
+import InteractiveReactor3D from '../components/simulator/InteractiveReactor3D';
 
 // Preload seluruh model 3D yang digunakan agar pemuatan instan
 useGLTF.preload('/models/Dipersatukan.glb');
 useGLTF.preload('/models/Cerobong.glb');
 useGLTF.preload('/models/Teras Reaktor.glb');
 useGLTF.preload('/models/Ruang Kontrol.glb');
+useGLTF.preload('/models/kartini-full.glb');
 
 // ============================================================
 // DATA SELURUH 13 BAGIAN REAKTOR (10 BAGIAN ASLI + 3 BAGIAN BARU)
@@ -202,6 +204,7 @@ function PreviewModelRenderer({ url }) {
 
 export default function Model3D() {
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('gambar'); // 'gambar' | 'interaktif'
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const mainControlsRef = useRef(null);
@@ -226,7 +229,9 @@ export default function Model3D() {
           HEADER UTAMA: GAMBAR 3D & TOMBOL BERANDA
           ============================================================ */}
       <div className="h-12 bg-gray-900 border-b border-gray-700 flex items-center px-4 justify-between flex-shrink-0 z-20">
-        <h1 className="text-lg font-bold text-purple-400">Gambar 3D</h1>
+        <h1 className="text-lg font-bold text-purple-400">
+          {activeTab === 'interaktif' ? 'Interaktif & Jalan (FPS)' : 'Gambar 3D'}
+        </h1>
         <button
           onClick={() => navigate('/')}
           className="px-3 py-1.5 bg-red-600 hover:bg-red-700 rounded text-xs font-semibold text-white transition cursor-pointer shadow"
@@ -236,18 +241,40 @@ export default function Model3D() {
       </div>
 
       {/* ============================================================
-          PILIHAN TAMPILAN TUNGGAL
+          PILIHAN TAB TAMPILAN
           ============================================================ */}
-      <div className="flex justify-center p-2.5 bg-gray-800 border-b border-gray-700 flex-shrink-0 z-10 shadow-sm">
-        <button className="px-6 py-1.5 rounded font-bold bg-blue-600 text-white shadow cursor-default">
+      <div className="flex justify-center gap-2 p-2.5 bg-gray-800 border-b border-gray-700 flex-shrink-0 z-10 shadow-sm">
+        <button
+          onClick={() => setActiveTab('gambar')}
+          className={`px-5 py-1.5 rounded font-bold text-sm transition cursor-pointer ${
+            activeTab === 'gambar'
+              ? 'bg-blue-600 text-white shadow'
+              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+          }`}
+        >
           Gambar 3D
+        </button>
+        <button
+          onClick={() => setActiveTab('interaktif')}
+          className={`px-5 py-1.5 rounded font-bold text-sm transition cursor-pointer flex items-center gap-1.5 ${
+            activeTab === 'interaktif'
+              ? 'bg-blue-600 text-white shadow'
+              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+          }`}
+        >
+          <span>🚶</span> Interaktif &amp; Jalan (FPS)
         </button>
       </div>
 
       {/* ============================================================
-          AREA UTAMA: MODEL 3D KIRI + SIDEBAR KANAN
+          AREA UTAMA: MODEL 3D KIRI + SIDEBAR KANAN ATAU MODE INTERAKTIF
           ============================================================ */}
-      <div className="flex-1 flex overflow-hidden relative min-h-0">
+      {activeTab === 'interaktif' ? (
+        <div className="flex-1 relative overflow-hidden min-h-0">
+          <InteractiveReactor3D />
+        </div>
+      ) : (
+        <div className="flex-1 flex overflow-hidden relative min-h-0">
         {/* CONTAINER 3D UTAMA – SELALU MENAMPILKAN DIPERSATUKAN.GLB */}
         <div className="flex-1 h-full w-full relative min-h-0 bg-[#48494B]">
           {/* Kontrol Kamera Legend */}
@@ -421,6 +448,7 @@ export default function Model3D() {
           {sidebarOpen ? '▸' : '◂'}
         </button>
       </div>
+      )}
     </div>
   );
 }

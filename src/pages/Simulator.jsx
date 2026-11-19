@@ -39,6 +39,104 @@ import FullChart from '../components/simulator/FullChart';
 import HelpContent from '../components/help/HelpContent';
 import { useReactorPhysics } from '../hooks/useReactorPhysics';
 
+// Konfigurasi Hotspot Komponen Reaktor (Koordinat presisi dalam viewBox 1440x1024)
+const HOTSPOTS_CONFIG = [
+  {
+    id: 'safe-rod',
+    x: 205,
+    y: 168,
+    icon: '🛡️',
+    title: 'Safe Rod (SCRAM)',
+    color: '#38bdf8',
+    placement: 'bottom'
+  },
+  {
+    id: 'shim-rod',
+    x: 285,
+    y: 168,
+    icon: '⚙️',
+    title: 'Shim Rod (Kompensasi)',
+    color: '#eab308',
+    placement: 'bottom'
+  },
+  {
+    id: 'reg-rod',
+    x: 368,
+    y: 168,
+    icon: '🎯',
+    title: 'Regulating Rod (Pengatur)',
+    color: '#06b6d4',
+    placement: 'bottom'
+  },
+  {
+    id: 'rod-drive',
+    x: 284,
+    y: 292,
+    icon: '⛰️',
+    title: 'Rod Drive Mechanism',
+    color: '#eab308',
+    placement: 'top'
+  },
+  {
+    id: 'bridge',
+    x: 485,
+    y: 312,
+    icon: '🌉',
+    title: 'Jembatan Reaktor (Bridge)',
+    color: '#3b82f6',
+    placement: 'top'
+  },
+  {
+    id: 'shield',
+    x: 452,
+    y: 405,
+    icon: '🧱',
+    title: 'Perisai Radiasi (Biological Shielding)',
+    color: '#c084fc',
+    placement: 'top'
+  },
+  {
+    id: 'pool',
+    x: 408,
+    y: 515,
+    icon: '💧',
+    title: 'Kolam Reaktor & Air Moderator',
+    color: '#38bdf8',
+    placement: 'top'
+  },
+  {
+    id: 'core',
+    x: 288,
+    y: 848,
+    icon: '☢️',
+    title: 'Teras Reaktor (Core)',
+    color: '#f97316',
+    placement: 'bottom'
+  },
+  {
+    id: 'pipe',
+    x: 721,
+    y: 416,
+    icon: '🔁',
+    title: 'Pipa Pendingin Primer',
+    color: '#fbbf24',
+    placement: 'top'
+  },
+  {
+    id: 'pump',
+    x: 889,
+    y: 425,
+    icon: '🔄',
+    title: 'Pompa Sirkulasi',
+    color: '#34d399',
+    placement: 'top'
+  }
+];
+
+// Posisi Y Batang Kendali dalam viewBox 1440x1024
+// Tinggi rod = 174. 0% (inserted) Y = 681 (bottom = 855). 100% (withdrawn) Y = 568.36 (travel = 112.64, bottom = 742.36)
+const getRodY = (pct) => 681 - (pct / 100) * 112.64;
+
 export default function Simulator() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -55,7 +153,7 @@ export default function Simulator() {
 
   const displayName = nickname
     ? nickname.charAt(0).toUpperCase() + nickname.slice(1)
-    : 'Operator';
+    : '';
 
   const [activePOV, setActivePOV] = useState('main');
   const [warning, setWarning] = useState('');
@@ -63,6 +161,33 @@ export default function Simulator() {
   const [tutorialStep, setTutorialStep] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [hoveredHotspot, setHoveredHotspot] = useState(null);
+
+  // Greeting Hello Operator / Nickname di bagian atas tengah presisi
+  const [showGreeting, setShowGreeting] = useState(true);
+  const [greetingFade, setGreetingFade] = useState(false);
+
+  useEffect(() => {
+    // Mulai memudar setelah tepat 3 detik
+    const fadeTimer = setTimeout(() => {
+      setGreetingFade(true);
+    }, 3000);
+
+    // Hapus dari render setelah transisi fade-out selesai
+    const removeTimer = setTimeout(() => {
+      setShowGreeting(false);
+    }, 3700);
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+  }, []);
+
+  const handleDismissGreeting = () => {
+    setGreetingFade(true);
+    setTimeout(() => setShowGreeting(false), 500);
+  };
 
   const { stepSimulation } = useReactorPhysics();
 
@@ -326,17 +451,52 @@ export default function Simulator() {
       </div>
 
       {/* AREA UTAMA (UKURAN DAN PROPORSI ASLI SESUAI VERSI AWAL) */}
-      <div className="flex-1 grid grid-cols-12 gap-1 p-1 overflow-hidden">
+      <div className="flex-1 grid grid-cols-12 gap-1 p-1 overflow-hidden min-h-0">
 
         {/* KOLOM KIRI (Visual Simulator) */}
-        <div className="col-span-8 bg-black relative flex items-center justify-center border border-gray-800 rounded">
+        <div className="col-span-8 bg-black relative flex items-center justify-center border border-gray-800 rounded overflow-hidden min-h-0 min-w-0">
 
-          {/* TULISAN HELLO PERMANEN DI KIRI, TEPAT DI BAWAH TULISAN SIMULATOR REAKTOR KARTINI */}
-          <div className="absolute top-1 sm:top-1.5 left-3 z-30 pointer-events-none select-none text-left">
-            <span className="font-serif font-normal text-base sm:text-lg md:text-[1.15rem] text-white tracking-normal leading-none drop-shadow-sm inline-block">
-              Hello, {displayName}
-            </span>
-          </div>
+          {/* GREETING HELLO OPERATOR / NICKNAME - DI ATAS TENGAH PRESISI & HILANG OTOMATIS 3 DETIK */}
+          {showGreeting && (
+            <div
+              onClick={handleDismissGreeting}
+              className={`absolute top-3 sm:top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 ease-out cursor-pointer select-none ${
+                greetingFade
+                  ? 'opacity-0 -translate-y-4 scale-95 blur-sm pointer-events-none'
+                  : 'opacity-100 translate-y-0 scale-100 blur-0'
+              }`}
+              title="Klik untuk menutup ucapan"
+            >
+              <div className="relative overflow-hidden flex items-center gap-2.5 sm:gap-3 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-slate-950/95 via-[#0A1628]/95 to-slate-950/95 backdrop-blur-xl border border-cyan-400/50 shadow-[0_0_25px_rgba(6,182,212,0.35),0_10px_25px_rgba(0,0,0,0.8)] transition-all group hover:border-cyan-300">
+                {/* Indikator Ping Radar Cyan */}
+                <div className="relative flex h-2.5 w-2.5 items-center justify-center flex-shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-80" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400 shadow-[0_0_10px_#22d3ee]" />
+                </div>
+
+                {/* Teks Ucapan Hello + Nickname */}
+                <span className="font-poppins text-xs sm:text-sm font-medium text-slate-200 tracking-wide flex items-center gap-1.5">
+                  <span>Hello{displayName ? ',' : '!'}</span>
+                  {displayName && (
+                    <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-100 to-cyan-400 drop-shadow-[0_0_12px_rgba(34,211,238,0.7)]">
+                      {displayName}
+                    </span>
+                  )}
+                  <span className="text-sm sm:text-base animate-bounce">👋</span>
+                </span>
+
+                {/* Tombol Tutup Mini */}
+                <span className="text-slate-500 group-hover:text-cyan-300 text-xs ml-0.5 transition-colors pl-1">
+                  ✕
+                </span>
+
+                {/* 3-Detik Countdown Progress Bar */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/80 overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 shadow-[0_0_8px_#22d3ee] animate-toast-countdown" />
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* TOMBOL BUKU PANDUAN KIRI BAWAH */}
           <div className="absolute bottom-4 left-4 z-40">
@@ -353,166 +513,193 @@ export default function Simulator() {
           </div>
 
           {activePOV === 'main' && (
-            <div className="relative w-full max-w-5xl xl:max-w-6xl max-h-[92vh] flex items-center justify-center">
-              {/* Background SVG Reaktor */}
-              <img 
-                src="/assets/images/reaktor-bg.svg" 
-                alt="Reaktor 2D" 
-                className="w-full h-auto max-h-[90vh] object-contain opacity-95 select-none pointer-events-none" 
-              />
-              
-              {/* ============================================================
-                  🎯 BATANG KENDALI (OVERLAY) - KOORDINAT SUDAH DISESUAIKAN
-                  ============================================================ */}
-              
-              {/* Safe Rod - merah */}
-              <div 
-                className="absolute w-[1.8%] bg-red-600 z-10 transition-none rounded-full shadow-[0_0_10px_rgba(255,0,0,0.5)]" 
-                style={{ 
-                  left: '13.7%', 
-                  bottom: `${17 + (rods.safe / 100) * 11}%`, 
-                  height: '17%' 
-                }}
-              />
-              
-              {/* Shim Rod - kuning */}
-              <div 
-                className="absolute w-[1.8%] bg-yellow-500 z-10 transition-none rounded-full shadow-[0_0_10px_rgba(255,200,0,0.5)]" 
-                style={{ 
-                  left: '19.2%', 
-                  bottom: `${17 + (rods.shim / 100) * 11}%`, 
-                  height: '18%' 
-                }}
-              />
-              
-              {/* Regulating Rod - cyan */}
-              <div 
-                className="absolute w-[1.8%] bg-cyan-400 z-10 transition-none rounded-full shadow-[0_0_10px_rgba(0,255,255,0.5)]" 
-                style={{ 
-                  left: '24.8%', 
-                  bottom: `${17 + (rods.regulate / 100) * 11}%`, 
-                  height: '17%' 
-                }}
-              />
-
-              {/* ============================================================
-                  🎯 LABEL PERSENTASE BATANG KENDALI
-                  ============================================================ */}
-              
-              <div 
-                className="absolute text-[0.6rem] font-mono font-bold text-cyan-300 z-20 transform -translate-x-1/2" 
-                style={{ 
-                  left: '14.5%', 
-                  bottom: `calc(${17 + (rods.safe / 100) * 11}% + 17% + 2%)`
-                }}
+            <div className="w-full h-full flex items-center justify-center p-0 sm:p-1 overflow-hidden select-none">
+              <svg 
+                viewBox="0 0 1440 1024" 
+                className="w-full h-full select-none"
+                preserveAspectRatio="xMidYMid meet"
               >
-                {rods.safe.toFixed(1)}%
-              </div>
+                <defs>
+                  <filter id="glow-safe" x="-30%" y="-30%" width="160%" height="160%">
+                    <feDropShadow dx="0" dy="0" stdDeviation="6" floodColor="#ef4444" floodOpacity="0.85" />
+                  </filter>
+                  <filter id="glow-shim" x="-30%" y="-30%" width="160%" height="160%">
+                    <feDropShadow dx="0" dy="0" stdDeviation="6" floodColor="#eab308" floodOpacity="0.85" />
+                  </filter>
+                  <filter id="glow-reg" x="-30%" y="-30%" width="160%" height="160%">
+                    <feDropShadow dx="0" dy="0" stdDeviation="6" floodColor="#06b6d4" floodOpacity="0.85" />
+                  </filter>
+                  <filter id="tooltip-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="3" stdDeviation="4" floodColor="#000000" floodOpacity="0.9" />
+                  </filter>
+                  <filter id="badge-glow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feDropShadow dx="0" dy="1" stdDeviation="3" floodColor="#000000" floodOpacity="0.8" />
+                  </filter>
+                </defs>
 
-              <div 
-                className="absolute text-[0.6rem] font-mono font-bold text-cyan-300 z-20 transform -translate-x-1/2" 
-                style={{ 
-                  left: '20.5%', 
-                  bottom: `calc(${17 + (rods.shim / 100) * 11}% + 18% + 2%)`
-                }}
-              >
-                {rods.shim.toFixed(1)}%
-              </div>
+                {/* Background SVG Reaktor */}
+                <image 
+                  href="/assets/images/reaktor-bg.svg" 
+                  width="1440" 
+                  height="1024" 
+                  className="select-none pointer-events-none"
+                />
 
-              <div 
-                className="absolute text-[0.6rem] font-mono font-bold text-cyan-300 z-20 transform -translate-x-1/2" 
-                style={{ 
-                  left: '26.5%', 
-                  bottom: `calc(${17 + (rods.regulate / 100) * 11}% + 17% + 2%)`
-                }}
-              >
-                {rods.regulate.toFixed(1)}%
-              </div>
+                {/* ============================================================
+                    🎯 BATANG KENDALI (RODS) - VEKTOR SVG PRESISI (1440x1024)
+                    ============================================================ */}
 
-              {/* ============================================================
-                  🎯 HOTSPOT INTERAKTIF (HANYA NAMA KOMPONEN, TANPA DESKRIPSI PANJANG)
-                  ============================================================ */}
+                {/* Safe Rod (Merah) */}
+                <rect 
+                  x="199.25"
+                  y={getRodY(rods.safe)}
+                  width="22"
+                  height="174"
+                  rx="11"
+                  fill="#dc2626"
+                  filter="url(#glow-safe)"
+                />
 
-              {/* 1. ROD DRIVE MECHANISM */}
-              <div className="absolute z-30 group hover:z-[100]" style={{ left: '18.3%', top: '27%' }}>
-                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-yellow-400 cursor-help font-bold text-yellow-300 hover:bg-yellow-400/20 transition">⛰️</span>
-                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-yellow-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
-                  <h3 className="text-yellow-400 font-bold text-[0.7rem]">Rod Drive Mechanism</h3>
-                </div>
-              </div>
+                {/* Shim Rod (Kuning) */}
+                <rect 
+                  x="279.25"
+                  y={getRodY(rods.shim)}
+                  width="22"
+                  height="174"
+                  rx="11"
+                  fill="#eab308"
+                  filter="url(#glow-shim)"
+                />
 
-              {/* 2A. SAFE ROD */}
-              <div className="absolute z-30 group hover:z-[100]" style={{ left: '13%', top: '14%' }}>
-                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-red-400 cursor-help font-bold text-red-300 hover:bg-red-400/20 transition">🛡️</span>
-                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-red-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
-                  <h3 className="text-red-400 font-bold text-[0.7rem]">Safe Rod (SCRAM)</h3>
-                </div>
-              </div>
+                {/* Regulating Rod (Cyan) */}
+                <rect 
+                  x="359.25"
+                  y={getRodY(rods.regulate)}
+                  width="22"
+                  height="174"
+                  rx="11"
+                  fill="#22d3ee"
+                  filter="url(#glow-reg)"
+                />
 
-              {/* 2B. SHIM ROD */}
-              <div className="absolute z-30 group hover:z-[100]" style={{ left: '18.3%', top: '14%' }}>
-                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-yellow-400 cursor-help font-bold text-yellow-300 hover:bg-yellow-400/20 transition">⚙️</span>
-                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-yellow-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
-                  <h3 className="text-yellow-400 font-bold text-[0.7rem]">Shim Rod (Kompensasi)</h3>
-                </div>
-              </div>
+                {/* ============================================================
+                    🎯 LABEL PERSENTASE BATANG KENDALI
+                    ============================================================ */}
+                <g className="select-none pointer-events-none">
+                  {/* Safe Rod % */}
+                  <text 
+                    x="210.25" 
+                    y={getRodY(rods.safe) - 10} 
+                    textAnchor="middle" 
+                    fill="#38bdf8" 
+                    fontSize="13" 
+                    fontFamily="monospace" 
+                    fontWeight="bold"
+                  >
+                    {rods.safe.toFixed(1)}%
+                  </text>
 
-              {/* 2C. REGULATING ROD */}
-              <div className="absolute z-30 group hover:z-[100]" style={{ left: '24%', top: '14%' }}>
-                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-cyan-400 cursor-help font-bold text-cyan-300 hover:bg-cyan-400/20 transition">🎯</span>
-                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-cyan-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
-                  <h3 className="text-cyan-400 font-bold text-[0.7rem]">Regulating Rod (Pengatur)</h3>
-                </div>
-              </div>
+                  {/* Shim Rod % */}
+                  <text 
+                    x="290.25" 
+                    y={getRodY(rods.shim) - 10} 
+                    textAnchor="middle" 
+                    fill="#38bdf8" 
+                    fontSize="13" 
+                    fontFamily="monospace" 
+                    fontWeight="bold"
+                  >
+                    {rods.shim.toFixed(1)}%
+                  </text>
 
-              {/* 3. JEMBATAN REAKTOR */}
-              <div className="absolute z-30 group hover:z-[100]" style={{ left: '32.3%', top: '29%' }}>
-                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-blue-400 cursor-help font-bold text-blue-300 hover:bg-blue-400/20 transition">🌉</span>
-                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-blue-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
-                  <h3 className="text-blue-400 font-bold text-[0.7rem]">Jembatan Reaktor (Bridge)</h3>
-                </div>
-              </div>
+                  {/* Regulating Rod % */}
+                  <text 
+                    x="370.25" 
+                    y={getRodY(rods.regulate) - 10} 
+                    textAnchor="middle" 
+                    fill="#38bdf8" 
+                    fontSize="13" 
+                    fontFamily="monospace" 
+                    fontWeight="bold"
+                  >
+                    {rods.regulate.toFixed(1)}%
+                  </text>
+                </g>
 
-              {/* 4. PERISAI RADIASI */}
-              <div className="absolute z-30 group hover:z-[100]" style={{ left: '30%', top: '38%' }}>
-                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-purple-400 cursor-help font-bold text-purple-300 hover:bg-purple-400/20 transition">🧱</span>
-                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-purple-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
-                  <h3 className="text-purple-400 font-bold text-[0.7rem]">Perisai Radiasi (Biological Shielding)</h3>
-                </div>
-              </div>
+                {/* ============================================================
+                    🎯 HOTSPOTS INTERAKTIF (HANYA KETERANGAN / NAMA, TANPA DESKRIPSI)
+                    ============================================================ */}
+                <g>
+                  {HOTSPOTS_CONFIG.map((h) => {
+                    const isHovered = hoveredHotspot === h.id;
+                    const tooltipWidth = Math.max(130, h.title.length * 8.5);
+                    const tooltipX = Math.max(10, Math.min(1440 - tooltipWidth - 10, h.x - tooltipWidth / 2));
+                    const tooltipY = h.placement === 'bottom' ? h.y + 16 : h.y - 32;
 
-              {/* 5. KOLAM REAKTOR + AIR MODERATOR */}
-              <div className="absolute z-30 group hover:z-[100]" style={{ left: '27%', top: '48.8%' }}>
-                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-sky-400 cursor-help font-bold text-sky-300 hover:bg-sky-400/20 transition">💧</span>
-                <div className="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2.5 py-1 bg-gray-900 border border-sky-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
-                  <h3 className="text-sky-400 font-bold text-[0.7rem]">Kolam Reaktor &amp; Air Moderator</h3>
-                </div>
-              </div>
+                    return (
+                      <g 
+                        key={h.id}
+                        onMouseEnter={() => setHoveredHotspot(h.id)}
+                        onMouseLeave={() => setHoveredHotspot(null)}
+                        className="cursor-pointer"
+                      >
+                        {/* Pill Background */}
+                        <rect 
+                          x={h.x - 20} 
+                          y={h.y - 11} 
+                          width="40" 
+                          height="22" 
+                          rx="11" 
+                          fill="#070a14" 
+                          stroke={h.color} 
+                          strokeWidth={isHovered ? 2.2 : 1.4}
+                          filter="url(#badge-glow)"
+                          className="transition-all duration-150"
+                        />
 
-              {/* 6. TERAS REAKTOR */}
-              <div className="absolute z-30 group hover:z-[100]" style={{ left: '18.4%', top: '82.8%' }}>
-                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-orange-400 cursor-help font-bold text-orange-300 hover:bg-orange-400/20 transition">☢️</span>
-                <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2.5 py-1 bg-gray-900 border border-orange-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
-                  <h3 className="text-orange-400 font-bold text-[0.7rem]">Teras Reaktor (Core)</h3>
-                </div>
-              </div>
+                        {/* Icon */}
+                        <text 
+                          x={h.x} 
+                          y={h.y + 4.5} 
+                          fontSize="13" 
+                          textAnchor="middle" 
+                          className="select-none pointer-events-none"
+                        >
+                          {h.icon}
+                        </text>
 
-              {/* 7. PIPA PENDINGIN */}
-              <div className="absolute z-30 group hover:z-[100]" style={{ left: '48.6%', top: '39.1%' }}>
-                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-amber-400 cursor-help font-bold text-amber-300 hover:bg-amber-400/20 transition">🔁</span>
-                <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2.5 py-1 bg-gray-900 border border-amber-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
-                  <h3 className="text-amber-400 font-bold text-[0.7rem]">Pipa Pendingin Primer</h3>
-                </div>
-              </div>
-
-              {/* 8. POMPA SIRKULASI */}
-              <div className="absolute z-30 group hover:z-[100]" style={{ left: '60.1%', top: '39.8%' }}>
-                <span className="bg-gray-800 text-[0.55rem] px-2 py-0.5 rounded-full border border-emerald-400 cursor-help font-bold text-emerald-300 hover:bg-emerald-400/20 transition">🔄</span>
-                <div className="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2.5 py-1 bg-gray-900 border border-emerald-400 rounded shadow-xl text-center whitespace-nowrap z-50 pointer-events-none">
-                  <h3 className="text-emerald-400 font-bold text-[0.7rem]">Pompa Sirkulasi</h3>
-                </div>
-              </div>
-
+                        {/* Tooltip Keterangan (HANYA NAMA, TANPA DESKRIPSI PANJANG) */}
+                        {isHovered && (
+                          <g className="pointer-events-none select-none" filter="url(#tooltip-shadow)">
+                            <rect 
+                              x={tooltipX} 
+                              y={tooltipY} 
+                              width={tooltipWidth} 
+                              height="24" 
+                              rx="5" 
+                              fill="#0b1120" 
+                              fillOpacity="0.96" 
+                              stroke={h.color} 
+                              strokeWidth="1.2" 
+                            />
+                            <text 
+                              x={tooltipX + tooltipWidth / 2} 
+                              y={tooltipY + 16} 
+                              fill="#ffffff" 
+                              fontSize="11.5" 
+                              fontWeight="bold"
+                              textAnchor="middle"
+                              fontFamily="system-ui, -apple-system, sans-serif"
+                            >
+                              {h.title}
+                            </text>
+                          </g>
+                        )}
+                      </g>
+                    );
+                  })}
+                </g>
+              </svg>
             </div>
           )}
 

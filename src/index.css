@@ -90,3 +90,16 @@
 .animate-greeting-pop {
   animation: greetingPopFade 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+@keyframes toastCountdown {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.animate-toast-countdown {
+  animation: toastCountdown 3s linear forwards;
+}
